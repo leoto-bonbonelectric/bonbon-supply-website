@@ -1,0 +1,2034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BonBon Electrical Supply — Complete Electrical Supply Catalog</title>
+<meta name="description" content="BonBon Electrical Supply carries everything electricians need. Browse our complete catalog of wire, conduit, breakers, panels, devices, lighting, tools and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #F5F5F5;
+    color: #0A0A0A;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: #0A0A0A;
+    padding: 20px 32px;
+    text-align: center;
+    position: relative;
+  }
+
+  .logo {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #FFFFFF;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  .brand-bonbon {
+    color: #C9A82C;
+    border-bottom: 3px solid #C9A82C;
+    padding-bottom: 2px;
+  }
+
+  .brand-supply {
+    color: #FFFFFF;
+  }
+
+  .tagline {
+    color: #aaa;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-top: 6px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* SEARCH BAR */
+  .search-bar-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #1a1a1a;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  }
+
+  #search {
+    flex: 1;
+    padding: 12px 18px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background: #0A0A0A;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  #search::placeholder { color: #666; }
+  #search:focus { border-color: #C9A82C; }
+
+  .search-count {
+    color: #C9A82C;
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    min-width: 90px;
+    text-align: right;
+  }
+
+  /* CATEGORY PILLS */
+  .cat-pills-wrap {
+    background: #fff;
+    padding: 12px 24px;
+    overflow-x: auto;
+    display: flex;
+    gap: 8px;
+    border-bottom: 2px solid #e0e0e0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .cat-pills-wrap::-webkit-scrollbar { display: none; }
+
+  .cat-pill {
+    flex-shrink: 0;
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    background: #fff;
+    color: #444;
+    transition: all 0.18s;
+    white-space: nowrap;
+    user-select: none;
+  }
+
+  .cat-pill:hover {
+    border-color: #C9A82C;
+    color: #0A0A0A;
+  }
+
+  .cat-pill.active {
+    background: #C9A82C;
+    border-color: #C9A82C;
+    color: #0A0A0A;
+  }
+
+  /* PRODUCT GRID */
+  .grid-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 28px 24px 48px;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  @media (max-width: 1100px) {
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .grid-wrap { padding: 16px 12px 40px; }
+    .logo { font-size: 1.4rem; }
+  }
+
+  @media (max-width: 480px) {
+    .product-grid { grid-template-columns: 1fr; }
+  }
+
+  /* PRODUCT CARDS */
+  .product-card {
+    background: #fff;
+    border: 1.5px solid #e8e8e8;
+    border-radius: 10px;
+    padding: 18px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+    cursor: default;
+  }
+
+  .product-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    transform: translateY(-3px);
+    border-color: #C9A82C;
+  }
+
+  .cat-badge {
+    display: inline-block;
+    background: #C9A82C;
+    color: #0A0A0A;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    width: fit-content;
+  }
+
+  .product-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+    margin: 4px 0;
+  }
+
+  .product-card h3 {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #0A0A0A;
+    line-height: 1.3;
+  }
+
+  .product-card p {
+    font-size: 0.78rem;
+    color: #666;
+    line-height: 1.45;
+    flex: 1;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #0A0A0A;
+    color: #fff;
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #C9A82C;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  footer p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+  }
+
+  .footer-links span {
+    color: #C9A82C;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .footer-note {
+    color: #555 !important;
+    font-size: 0.78rem !important;
+    margin-top: 20px !important;
+  }
+
+  /* highlight */
+  mark {
+    background: #C9A82C;
+    color: #0A0A0A;
+    border-radius: 2px;
+    padding: 0 2px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">⚡ <span class="brand-bonbon">BONBON</span> <span class="brand-supply">ELECTRICAL SUPPLY</span></div>
+  <div class="tagline">Your Complete Electrical Supply Source</div>
+</header>
+<div class="search-bar-wrap">
+  <input type="text" id="search" placeholder="Search products... (wire, breaker, conduit, etc.)" oninput="filterProducts()">
+  <span class="search-count" id="searchCount"></span>
+</div>
+<div class="cat-pills-wrap">
+  <button class="cat-pill active" data-cat="All" onclick="setCategory('All', this)">All Products</button>
+  <button class="cat-pill" data-cat="Wire &amp; Cable" onclick="setCategory('Wire &amp; Cable', this)">Wire &amp; Cable</button>
+  <button class="cat-pill" data-cat="Conduit &amp; Fittings" onclick="setCategory('Conduit &amp; Fittings', this)">Conduit &amp; Fittings</button>
+  <button class="cat-pill" data-cat="Boxes &amp; Enclosures" onclick="setCategory('Boxes &amp; Enclosures', this)">Boxes &amp; Enclosures</button>
+  <button class="cat-pill" data-cat="Breakers &amp; Panels" onclick="setCategory('Breakers &amp; Panels', this)">Breakers &amp; Panels</button>
+  <button class="cat-pill" data-cat="Devices &amp; Receptacles" onclick="setCategory('Devices &amp; Receptacles', this)">Devices &amp; Receptacles</button>
+  <button class="cat-pill" data-cat="Lighting &amp; Controls" onclick="setCategory('Lighting &amp; Controls', this)">Lighting &amp; Controls</button>
+  <button class="cat-pill" data-cat="Tools &amp; Supplies" onclick="setCategory('Tools &amp; Supplies', this)">Tools &amp; Supplies</button>
+  <button class="cat-pill" data-cat="Safety &amp; PPE" onclick="setCategory('Safety &amp; PPE', this)">Safety &amp; PPE</button>
+  <button class="cat-pill" data-cat="Motors &amp; Controls" onclick="setCategory('Motors &amp; Controls', this)">Motors &amp; Controls</button>
+  <button class="cat-pill" data-cat="Transformers" onclick="setCategory('Transformers', this)">Transformers</button>
+  <button class="cat-pill" data-cat="Low Voltage &amp; Data" onclick="setCategory('Low Voltage &amp; Data', this)">Low Voltage &amp; Data</button>
+</div>
+<script>
+const products = [
+  // ===== WIRE & CABLE (25+ items) =====
+  { id: 1, name: "14 AWG THHN Wire — Black", category: "Wire & Cable", desc: "Single conductor, 600V, 90°C dry/75°C wet. Nylon-jacketed thermoplastic. Meets NEC requirements for branch circuits. Sold by the foot or 500ft spool." },
+  { id: 2, name: "14 AWG THHN Wire — White", category: "Wire & Cable", desc: "Single conductor THHN/THWN-2, 600V. White jacket for neutral identification. 90°C dry, 75°C wet rating." },
+  { id: 3, name: "14 AWG THHN Wire — Green", category: "Wire & Cable", desc: "Single conductor THHN, 600V. Green jacket per NEC grounding conductor requirements. 90°C dry rating." },
+  { id: 4, name: "14 AWG THHN Wire — Red", category: "Wire & Cable", desc: "Single conductor THHN/THWN-2, 600V. Red jacket for hot leg identification in multi-wire circuits." },
+  { id: 5, name: "12 AWG THHN Wire — Black", category: "Wire & Cable", desc: "12 AWG single conductor, 600V, THHN/THWN-2. Standard for 20A branch circuits. Nylon jacket, oil and gasoline resistant." },
+  { id: 6, name: "12 AWG THHN Wire — White", category: "Wire & Cable", desc: "12 AWG THHN/THWN-2, 600V. White neutral conductor for 20A circuits. UL listed." },
+  { id: 7, name: "10 AWG THHN Wire — Black", category: "Wire & Cable", desc: "10 AWG THHN, 600V. Used for 30A circuits, dryers, water heaters. Stranded or solid available." },
+  { id: 8, name: "10 AWG THHN Wire — Red", category: "Wire & Cable", desc: "10 AWG THHN/THWN-2, 600V. Red jacket. Used as second hot leg in 240V 30A circuits." },
+  { id: 9, name: "6 AWG THHN Wire — Black", category: "Wire & Cable", desc: "6 AWG stranded THHN, 600V. Used for 60A feeders, EV charger circuits, sub-panels." },
+  { id: 10, name: "4 AWG THHN Wire — Black", category: "Wire & Cable", desc: "4 AWG stranded THHN/THWN-2, 600V. 85A ampacity. Used for large feeder runs and service conductors." },
+  { id: 11, name: "2 AWG THHN Wire — Black", category: "Wire & Cable", desc: "2 AWG stranded THHN, 600V. 115A ampacity. Service entrance feeders, large sub-panel feeds." },
+  { id: 12, name: "1/0 AWG THHN Wire — Black", category: "Wire & Cable", desc: "1/0 AWG (0 gauge) stranded THHN, 600V. 150A ampacity. Large service feeders and industrial applications." },
+  { id: 13, name: "2/0 AWG THHN Wire — Black", category: "Wire & Cable", desc: "2/0 AWG stranded THHN, 600V. 175A ampacity. Service entrance conductors and large feeder circuits." },
+  { id: 14, name: "4/0 AWG THHN Wire — Black", category: "Wire & Cable", desc: "4/0 AWG stranded THHN/THWN-2, 600V. 230A ampacity. 200A service entrance conductors." },
+  { id: 15, name: "Romex NM-B 14/2 Wire", category: "Wire & Cable", desc: "14 AWG 2-conductor with ground, non-metallic sheathed cable. Rated for 15A circuits in residential wiring. UL listed, 600V, 90°C. Sold by the foot or 250ft roll." },
+  { id: 16, name: "Romex NM-B 14/3 Wire", category: "Wire & Cable", desc: "14 AWG 3-conductor with ground NM-B cable. Used for 3-way switch circuits and split receptacles. 15A rated." },
+  { id: 17, name: "Romex NM-B 12/2 Wire", category: "Wire & Cable", desc: "12 AWG 2-conductor with ground NM-B. Standard for 20A kitchen, bathroom, and laundry circuits." },
+  { id: 18, name: "Romex NM-B 12/3 Wire", category: "Wire & Cable", desc: "12 AWG 3-conductor with ground NM-B. Used for 3-way switch legs and MWBC circuits at 20A." },
+  { id: 19, name: "Romex NM-B 10/2 Wire", category: "Wire & Cable", desc: "10 AWG 2-conductor with ground NM-B. Ideal for 30A dryer and water heater circuits." },
+  { id: 20, name: "Romex NM-B 10/3 Wire", category: "Wire & Cable", desc: "10 AWG 3-conductor with ground NM-B. Used for 240V/30A circuits requiring separate hot legs." },
+  { id: 21, name: "Romex NM-B 8/3 Wire", category: "Wire & Cable", desc: "8 AWG 3-conductor with ground NM-B. For 40A electric ranges and large appliances." },
+  { id: 22, name: "MC Cable 12/2 (Metal Clad)", category: "Wire & Cable", desc: "12 AWG 2-conductor metal clad cable with aluminum armor. Used in commercial and industrial branch circuits. Flexible and easy to pull." },
+  { id: 23, name: "MC Cable 12/3 (Metal Clad)", category: "Wire & Cable", desc: "12 AWG 3-conductor MC cable with aluminum interlocked armor. THHN conductors inside. Replaces EMT runs in many applications." },
+  { id: 24, name: "MC Cable 10/2 (Metal Clad)", category: "Wire & Cable", desc: "10 AWG 2-conductor MC cable. For 30A branch circuits in commercial construction. Armored protection, UL listed." },
+  { id: 25, name: "SER Service Entrance Cable 1/0-1/0-1/0-1 AWG", category: "Wire & Cable", desc: "Service entrance round cable. Three 1/0 AWG aluminum conductors plus 1 AWG neutral. 150A service rating." },
+  { id: 26, name: "SER Service Entrance Cable 2/0-2/0-2/0-1 AWG", category: "Wire & Cable", desc: "SER cable with three 2/0 AWG and 1 AWG neutral aluminum conductors. 175A service. Weather-resistant jacket." },
+  { id: 27, name: "SER Service Entrance Cable 4/0-4/0-2/0 AWG", category: "Wire & Cable", desc: "200A service entrance cable. Two 4/0 AWG phase conductors and 2/0 neutral. Aluminum, XHHW insulated." },
+  { id: 28, name: "UF-B Underground Feeder 12/2", category: "Wire & Cable", desc: "12 AWG 2-conductor with ground underground feeder cable. Sunlight resistant, direct burial rated. For outdoor circuits and landscape lighting." },
+  { id: 29, name: "UF-B Underground Feeder 14/2", category: "Wire & Cable", desc: "14 AWG 2-conductor UF-B direct burial cable. Used for outdoor outlets, landscape circuits, and yard lighting." },
+  { id: 30, name: "XHHW-2 Aluminum Wire 2 AWG", category: "Wire & Cable", desc: "2 AWG aluminum XHHW-2, 600V, 90°C wet/dry. Used for service entrance feeders and large circuits. UL listed." },
+  { id: 31, name: "Low Voltage Thermostat Wire 18/5 — 50ft", category: "Wire & Cable", desc: "18 AWG 5-conductor thermostat cable. Color-coded wires for HVAC control wiring. CL2 rated. 50ft roll." },
+  { id: 32, name: "Low Voltage Thermostat Wire 18/8 — 50ft", category: "Wire & Cable", desc: "18 AWG 8-conductor thermostat/control cable for advanced HVAC systems with staging, humidistats, and accessories." },
+  { id: 33, name: "Cat6 Plenum Cable 1000ft — Blue", category: "Wire & Cable", desc: "Cat6 plenum-rated (CMP) bulk cable. 23 AWG solid conductors, 550 MHz, supports 10G Ethernet. For air-handling spaces." },
+
+  // ===== CONDUIT & FITTINGS (25+ items) =====
+  { id: 34, name: "EMT Conduit 1/2\" — 10ft", category: "Conduit & Fittings", desc: "1/2\" electrical metallic tubing, 10ft stick. Hot-dip galvanized steel. For exposed and concealed wiring in dry/damp locations." },
+  { id: 35, name: "EMT Conduit 3/4\" — 10ft", category: "Conduit & Fittings", desc: "3/4\" EMT, 10ft. Galvanized steel. The most common commercial conduit size for 12 AWG circuits." },
+  { id: 36, name: "EMT Conduit 1\" — 10ft", category: "Conduit & Fittings", desc: "1\" EMT conduit, 10ft stick. Galvanized. For larger feeder conduit runs and panel feeds." },
+  { id: 37, name: "EMT Conduit 1-1/4\" — 10ft", category: "Conduit & Fittings", desc: "1-1/4\" EMT, 10ft. Used for sub-panel feeders and larger conductor bundles." },
+  { id: 38, name: "EMT Conduit 1-1/2\" — 10ft", category: "Conduit & Fittings", desc: "1-1/2\" EMT, 10ft. For large feeder runs and 3-phase circuits in commercial buildings." },
+  { id: 39, name: "EMT Conduit 2\" — 10ft", category: "Conduit & Fittings", desc: "2\" EMT conduit, 10ft. For main feeders, 200A panel feeds, and high-capacity circuits." },
+  { id: 40, name: "EMT Conduit 3\" — 10ft", category: "Conduit & Fittings", desc: "3\" EMT, 10ft. Large trunk conduit for service entrances and distribution systems." },
+  { id: 41, name: "EMT Conduit 4\" — 10ft", category: "Conduit & Fittings", desc: "4\" EMT, 10ft. Used in service entrance applications and large underground feeders." },
+  { id: 42, name: "PVC Schedule 40 Conduit 1/2\" — 10ft", category: "Conduit & Fittings", desc: "1/2\" Schedule 40 PVC conduit, 10ft. Grey. For direct burial and concrete encasement. Sunlight-resistant jacket available." },
+  { id: 43, name: "PVC Schedule 40 Conduit 3/4\" — 10ft", category: "Conduit & Fittings", desc: "3/4\" PVC Sch 40, 10ft. Direct burial and underground duct bank applications." },
+  { id: 44, name: "PVC Schedule 40 Conduit 1\" — 10ft", category: "Conduit & Fittings", desc: "1\" Schedule 40 PVC conduit, 10ft. For underground service and branch circuit conduit." },
+  { id: 45, name: "PVC Schedule 40 Conduit 2\" — 10ft", category: "Conduit & Fittings", desc: "2\" PVC Sch 40, 10ft. Used for underground feeder conduit and telecom duct banks." },
+  { id: 46, name: "PVC Schedule 40 Conduit 4\" — 10ft", category: "Conduit & Fittings", desc: "4\" PVC Sch 40, 10ft. For large underground service conduit and telecommunications infrastructure." },
+  { id: 47, name: "Rigid Galvanized Conduit (RMC) 1/2\" — 10ft", category: "Conduit & Fittings", desc: "1/2\" rigid metallic conduit, hot-dip galvanized. For outdoor, exposed, and hazardous locations. Highest physical protection rating." },
+  { id: 48, name: "Rigid Galvanized Conduit (RMC) 3/4\" — 10ft", category: "Conduit & Fittings", desc: "3/4\" RMC, 10ft. Threaded ends. For exterior applications and areas requiring maximum mechanical protection." },
+  { id: 49, name: "Rigid Galvanized Conduit (RMC) 1\" — 10ft", category: "Conduit & Fittings", desc: "1\" rigid galvanized conduit, 10ft. For service entrance masts and outdoor feeder conduit." },
+  { id: 50, name: "Rigid Galvanized Conduit (RMC) 2\" — 10ft", category: "Conduit & Fittings", desc: "2\" RMC, 10ft. Threaded. Service entrance and large outdoor feeder conduit applications." },
+  { id: 51, name: "Flexible Metal Conduit (FMC) 1/2\" — 25ft", category: "Conduit & Fittings", desc: "1/2\" steel flexible metal conduit, 25ft coil. For final connections to motors, HVAC units, and equipment." },
+  { id: 52, name: "Liquid-Tight Flexible Conduit (LFMC) 1/2\" — 25ft", category: "Conduit & Fittings", desc: "1/2\" LFMC with PVC jacket. Watertight flexible conduit for wet locations and exterior connections to equipment." },
+  { id: 53, name: "EMT Set-Screw Connector 1/2\"", category: "Conduit & Fittings", desc: "1/2\" EMT set-screw connector (steel). For connecting EMT to boxes and enclosures. Steel with zinc electroplate." },
+  { id: 54, name: "EMT Compression Connector 1/2\"", category: "Conduit & Fittings", desc: "1/2\" compression-type EMT connector. Raintight and concrete-tight. For wet locations and concrete pours." },
+  { id: 55, name: "EMT Set-Screw Connector 3/4\"", category: "Conduit & Fittings", desc: "3/4\" EMT set-screw connector. Steel zinc-plated. Standard indoor conduit box connection fitting." },
+  { id: 56, name: "EMT Compression Connector 3/4\"", category: "Conduit & Fittings", desc: "3/4\" compression EMT connector. Raintight for wet-location installations." },
+  { id: 57, name: "EMT Set-Screw Coupling 1/2\"", category: "Conduit & Fittings", desc: "1/2\" EMT set-screw coupling for joining two lengths of EMT. Set-screw type for dry/damp locations." },
+  { id: 58, name: "EMT Set-Screw Coupling 3/4\"", category: "Conduit & Fittings", desc: "3/4\" EMT coupling, set-screw type. Zinc-plated steel. For inline conduit connections." },
+  { id: 59, name: "PVC Elbow 90° 3/4\" — Schedule 40", category: "Conduit & Fittings", desc: "3/4\" Schedule 40 PVC 90° elbow. For underground conduit direction changes. Solvent-weld connections." },
+  { id: 60, name: "PVC Elbow 90° 2\" — Schedule 40", category: "Conduit & Fittings", desc: "2\" PVC Sch 40 sweep elbow, 90°. Long radius for easier wire pulling in underground duct banks." },
+  { id: 61, name: "LB Conduit Body 3/4\" — Aluminum", category: "Conduit & Fittings", desc: "3/4\" aluminum LB conduit body with cover and gasket. For 90° pull and direction changes in EMT/rigid conduit systems." },
+  { id: 62, name: "LL Conduit Body 3/4\" — Aluminum", category: "Conduit & Fittings", desc: "3/4\" aluminum LL conduit body. Left-turn 90° fitting with removable cover for wire pulling access." },
+  { id: 63, name: "LR Conduit Body 3/4\" — Aluminum", category: "Conduit & Fittings", desc: "3/4\" aluminum LR conduit body (right-turn). With cover and neoprene gasket for wet locations." },
+  { id: 64, name: "T-Body Conduit Fitting 3/4\" — Aluminum", category: "Conduit & Fittings", desc: "3/4\" T-type conduit body. Tee-shaped for three-way wire access point in conduit systems." },
+  { id: 65, name: "EMT One-Hole Strap 1/2\" (100pk)", category: "Conduit & Fittings", desc: "1/2\" EMT one-hole steel strap, 100-pack. For securing EMT conduit to framing, concrete, and surfaces." },
+  { id: 66, name: "EMT One-Hole Strap 3/4\" (100pk)", category: "Conduit & Fittings", desc: "3/4\" EMT one-hole strap, steel, 100-pack. Supports EMT at required intervals per NEC." },
+
+  // ===== BOXES & ENCLOSURES (20+ items) =====
+  { id: 67, name: "1-Gang Old Work Plastic Box", category: "Boxes & Enclosures", desc: "Single-gang electrical box for remodel/retrofit work. Clamp-style anchors to drywall. 18 cu in capacity. Ideal for switches and receptacles." },
+  { id: 68, name: "1-Gang New Work Plastic Box", category: "Boxes & Enclosures", desc: "Single-gang nail-on plastic box for new construction. Integral nails for wood framing. 18 cu in." },
+  { id: 69, name: "2-Gang Old Work Plastic Box", category: "Boxes & Enclosures", desc: "2-gang plastic retrofit box. Drywall-mount with adjustable wings. 34 cu in. For double switches, GFCI combos." },
+  { id: 70, name: "2-Gang New Work Plastic Box", category: "Boxes & Enclosures", desc: "2-gang nail-on new work box. 30 cu in capacity. For dual switches or receptacles in framed walls." },
+  { id: 71, name: "3-Gang New Work Plastic Box", category: "Boxes & Enclosures", desc: "3-gang plastic new construction box. 42 cu in. For three switches, combination switch/receptacle arrangements." },
+  { id: 72, name: "4\" Square Metal Box — 1-1/2\" Deep", category: "Boxes & Enclosures", desc: "4\" square steel junction/device box, 1-1/2\" deep. 21 cu in. Standard commercial wiring box for switches and outlets with plaster ring." },
+  { id: 73, name: "4\" Square Metal Box — 2-1/8\" Deep", category: "Boxes & Enclosures", desc: "4\" square steel box, 2-1/8\" deep. 30.3 cu in. For high-fill applications and multiple conductors in commercial work." },
+  { id: 74, name: "4-11/16\" Square Metal Box — 2-1/8\" Deep", category: "Boxes & Enclosures", desc: "4-11/16\" (4-3/4\") square steel box. 42 cu in. Used for large fill applications, panels, and high-capacity junction points." },
+  { id: 75, name: "4\" Round Ceiling Pan Box", category: "Boxes & Enclosures", desc: "4\" round pan (octagon) ceiling box, 1-1/2\" deep. 15.5 cu in. For ceiling light fixtures and junction points." },
+  { id: 76, name: "Weatherproof In-Use Cover — 1-Gang", category: "Boxes & Enclosures", desc: "1-gang weatherproof while-in-use outlet cover. Clears up to 4\" plugs. UL listed for wet locations. Meets NEC 406.9." },
+  { id: 77, name: "Weatherproof In-Use Cover — 2-Gang", category: "Boxes & Enclosures", desc: "2-gang while-in-use weatherproof cover. Vertical mount. For duplex GFCI receptacles in outdoor, wet locations." },
+  { id: 78, name: "PVC Weatherproof Box — 1-Gang", category: "Boxes & Enclosures", desc: "1-gang PVC outdoor box with conduit hubs. Gray. Used with PVC or FMC for outdoor and wet location wiring." },
+  { id: 79, name: "Junction Box 4\"×4\"×4\" — Hinged", category: "Boxes & Enclosures", desc: "4\"×4\"×4\" steel NEMA 1 junction box with hinged cover. For indoor wire splices, control wiring, and terminal blocks." },
+  { id: 80, name: "Junction Box 6\"×6\"×4\" — NEMA 1", category: "Boxes & Enclosures", desc: "6\"×6\"×4\" steel junction box, knock-outs on all sides. Surface mount. For large wire splice points and terminal blocks." },
+  { id: 81, name: "Junction Box 8\"×8\"×4\" — NEMA 1", category: "Boxes & Enclosures", desc: "8\"×8\"×4\" steel NEMA 1 enclosure. For complex wire junction and control wiring in dry indoor locations." },
+  { id: 82, name: "Junction Box 12\"×12\"×6\" — NEMA 1", category: "Boxes & Enclosures", desc: "12\"×12\"×6\" NEMA 1 enclosure with mounting plate. Ideal for control panels, relays, and terminal strip assemblies." },
+  { id: 83, name: "NEMA 3R Enclosure 12\"×10\"×4\"", category: "Boxes & Enclosures", desc: "12\"×10\"×4\" NEMA 3R rainproof outdoor steel enclosure. For exterior distribution panels, disconnects, and controls." },
+  { id: 84, name: "NEMA 4 Stainless Enclosure 12\"×10\"×5\"", category: "Boxes & Enclosures", desc: "NEMA 4 watertight stainless steel enclosure. Hosedown-rated. For washdown areas, food processing, and harsh environments." },
+  { id: 85, name: "NEMA 1 Surface Box 4\"×4\" — Starter Enclosure", category: "Boxes & Enclosures", desc: "Compact NEMA 1 steel box. For small control panels, motor starter mounting, and relay enclosures." },
+  { id: 86, name: "Handy Box (Utility Box) — 1-Gang Surface", category: "Boxes & Enclosures", desc: "1-gang surface mount handy box. Steel, 10.5 cu in. For exposed wiring on concrete, masonry, and wood surfaces." },
+
+  // ===== BREAKERS & PANELS (25+ items) =====
+  { id: 87, name: "Square D QO115 — 15A 1-Pole Breaker", category: "Breakers & Panels", desc: "Square D QO series 15A single-pole circuit breaker. Plug-on style. 120V, 10kAIC. Fits QO load centers." },
+  { id: 88, name: "Square D QO120 — 20A 1-Pole Breaker", category: "Breakers & Panels", desc: "Square D QO 20A 1-pole breaker. For 20A kitchen, bath, and general circuits. Visi-Trip indicator." },
+  { id: 89, name: "Square D QO230 — 30A 2-Pole Breaker", category: "Breakers & Panels", desc: "Square D QO 30A 2-pole, 240V breaker. For dryers, water heaters, and A/C disconnects. 10kAIC." },
+  { id: 90, name: "Square D QO250 — 50A 2-Pole Breaker", category: "Breakers & Panels", desc: "Square D QO 50A 2-pole breaker. For electric ranges, EV chargers, and 240V appliances." },
+  { id: 91, name: "Square D QO2100 — 100A 2-Pole Breaker", category: "Breakers & Panels", desc: "Square D QO 100A 2-pole main or feeder breaker. For sub-panels and large 240V loads. 22kAIC." },
+  { id: 92, name: "Square D QO2200 — 200A 2-Pole Main Breaker", category: "Breakers & Panels", desc: "Square D QO 200A 2-pole main circuit breaker. For service entrances and main panel disconnects. 22kAIC." },
+  { id: 93, name: "Square D QO115AFIC — 15A AFCI Breaker", category: "Breakers & Panels", desc: "Square D QO 15A AFCI combination arc fault breaker. NEC 2020 compliant. Required for bedroom and living area circuits." },
+  { id: 94, name: "Square D QO120AFIC — 20A AFCI Breaker", category: "Breakers & Panels", desc: "Square D QO 20A AFCI breaker. Arc fault protection for kitchen, laundry, and all NEC-required circuits." },
+  { id: 95, name: "Square D QO115GFIC — 15A GFCI Breaker", category: "Breakers & Panels", desc: "Square D QO 15A GFCI breaker with pigtail. Ground fault protection for wet area circuits at the panel." },
+  { id: 96, name: "Square D QO120GFIC — 20A GFCI Breaker", category: "Breakers & Panels", desc: "Square D QO 20A GFCI breaker. For bathroom, kitchen, outdoor, and garage circuits requiring GFCI protection." },
+  { id: 97, name: "Eaton BR115 — 15A 1-Pole Breaker", category: "Breakers & Panels", desc: "Eaton BR series 15A 1-pole plug-on breaker. 120/240V, 10kAIC. Fits Eaton BR load centers." },
+  { id: 98, name: "Eaton BR120 — 20A 1-Pole Breaker", category: "Breakers & Panels", desc: "Eaton BR 20A single-pole breaker. 120V, plug-on. Standard for 20A general purpose branch circuits." },
+  { id: 99, name: "Eaton BR230 — 30A 2-Pole Breaker", category: "Breakers & Panels", desc: "Eaton BR 30A 2-pole 240V breaker. For dryers, water heaters, and HVAC equipment." },
+  { id: 100, name: "Eaton BR250 — 50A 2-Pole Breaker", category: "Breakers & Panels", desc: "Eaton BR 50A 2-pole breaker. For ranges, EV chargers, and large 240V circuits." },
+  { id: 101, name: "Eaton BR2100 — 100A 2-Pole Breaker", category: "Breakers & Panels", desc: "Eaton BR 100A 2-pole breaker. For sub-panel feeds and large equipment circuits. 22kAIC rating." },
+  { id: 102, name: "Siemens Q115 — 15A 1-Pole Breaker", category: "Breakers & Panels", desc: "Siemens Q-series 15A 1-pole breaker. 120V, 10kAIC. Plug-in style for Siemens/Murray load centers." },
+  { id: 103, name: "Siemens Q120 — 20A 1-Pole Breaker", category: "Breakers & Panels", desc: "Siemens Q-series 20A 1-pole breaker. Standard 20A branch circuit protection for Siemens panels." },
+  { id: 104, name: "Siemens Q230 — 30A 2-Pole Breaker", category: "Breakers & Panels", desc: "Siemens 30A 2-pole 240V breaker. Plug-in type for Siemens/ITE load centers. 10kAIC." },
+  { id: 105, name: "Square D QO130L — 30-Space 200A Load Center", category: "Breakers & Panels", desc: "Square D QO 200A 30-space 60-circuit indoor load center. Main breaker included. For residential and light commercial service." },
+  { id: 106, name: "Square D QO140L — 40-Space 200A Load Center", category: "Breakers & Panels", desc: "Square D QO 40-space 80-circuit 200A indoor load center with main breaker. Copper bus. Flush or surface mount." },
+  { id: 107, name: "Homeline 100A 20-Space Load Center", category: "Breakers & Panels", desc: "Square D Homeline 100A main breaker panel, 20-space 40-circuit. Value line for residential new construction." },
+  { id: 108, name: "Square D Homeline 200A 40-Space Panel", category: "Breakers & Panels", desc: "200A 40-space 80-circuit Homeline main breaker load center. Pre-wired main breaker, copper-clad aluminum bus." },
+  { id: 109, name: "Square D 60A Safety Disconnect (NEMA 3R)", category: "Breakers & Panels", desc: "60A 240V 2-pole non-fusible safety switch. NEMA 3R outdoor rated. For A/C unit and equipment disconnects." },
+  { id: 110, name: "Square D 100A Safety Disconnect (NEMA 3R)", category: "Breakers & Panels", desc: "100A 240V 2-pole NEMA 3R non-fusible disconnect. For sub-panel and large equipment disconnecting means." },
+  { id: 111, name: "Eaton 200A Main Breaker Panel — 40-Space", category: "Breakers & Panels", desc: "Eaton BR 200A 40-space 80-circuit main breaker load center. For residential service upgrades and new construction." },
+
+  // ===== DEVICES & RECEPTACLES (25+ items) =====
+  { id: 112, name: "Leviton 15A Duplex Receptacle — White", category: "Devices & Receptacles", desc: "Leviton 5320 15A 125V duplex outlet. White. Commercial grade, back and side wired. For standard branch circuits." },
+  { id: 113, name: "Leviton 15A Duplex Receptacle — Ivory", category: "Devices & Receptacles", desc: "Leviton 5320-I 15A duplex receptacle in ivory finish. Side-wired, break-off tab for split circuit use." },
+  { id: 114, name: "Leviton 15A Duplex Receptacle — Almond", category: "Devices & Receptacles", desc: "Leviton 5320-A 15A 125V duplex outlet, almond. Residential and commercial standard branch circuits." },
+  { id: 115, name: "20A Tamper-Resistant Duplex Receptacle", category: "Devices & Receptacles", desc: "20A 125V TR duplex outlet. Tamper-resistant shutters per NEC 406.12. Required in all residential rooms. White." },
+  { id: 116, name: "Leviton GFCI 15A Self-Test — White", category: "Devices & Receptacles", desc: "Leviton GFNT1 15A 125V GFCI duplex outlet with self-test and automatic monitoring. Auto-lockout if device fails test." },
+  { id: 117, name: "Leviton GFCI 20A — White", category: "Devices & Receptacles", desc: "Leviton GFNT2 20A 125V GFCI outlet. For kitchen, bath, garage, outdoor circuits. Self-test technology." },
+  { id: 118, name: "USB-A+C Combo Duplex Receptacle", category: "Devices & Receptacles", desc: "15A duplex receptacle with integrated USB-A (2.4A) and USB-C (3A PD) charging ports. White. No adapter needed." },
+  { id: 119, name: "30A Dryer Receptacle — 3-Wire (NEMA 10-30R)", category: "Devices & Receptacles", desc: "30A 125/250V dryer outlet, 3-wire, flush mount. NEMA 10-30R. For older dryer installations without ground." },
+  { id: 120, name: "30A Dryer Receptacle — 4-Wire (NEMA 14-30R)", category: "Devices & Receptacles", desc: "30A 125/250V 4-wire dryer outlet. NEMA 14-30R with ground. Required per current NEC for new dryer circuits." },
+  { id: 121, name: "50A Range Receptacle — 4-Wire (NEMA 14-50R)", category: "Devices & Receptacles", desc: "50A 125/250V range outlet, 4-wire flush mount. NEMA 14-50R. For electric ranges and EV charger installations." },
+  { id: 122, name: "Single-Pole 15A Switch — White", category: "Devices & Receptacles", desc: "Leviton 1451 15A 120/277V single-pole switch. White. Side-wired. For standard lighting control in residential/commercial." },
+  { id: 123, name: "3-Way 15A Switch — White", category: "Devices & Receptacles", desc: "15A 120/277V 3-way switch. For controlling lights from two locations. White, side and back wired." },
+  { id: 124, name: "4-Way 15A Switch — White", category: "Devices & Receptacles", desc: "15A 4-way switch. Used with two 3-way switches to control lighting from three or more locations." },
+  { id: 125, name: "Decora Single-Pole Switch — White", category: "Devices & Receptacles", desc: "Leviton Decora 15A single-pole rocker switch. White. Requires Decora-style wallplate. For standard lighting circuits." },
+  { id: 126, name: "Decora 3-Way Switch — White", category: "Devices & Receptacles", desc: "Leviton Decora 15A 3-way rocker switch. Matches all Decora wiring devices. Requires Decora wallplate." },
+  { id: 127, name: "LED Dimmer Switch 600W — White", category: "Devices & Receptacles", desc: "Leviton Decora 600W LED/CFL/incandescent dimmer switch. Single-pole. CL technology for smooth dimming without flicker." },
+  { id: 128, name: "Occupancy Sensor Switch — PIR", category: "Devices & Receptacles", desc: "Passive infrared (PIR) occupancy/vacancy sensor switch. Auto-on/off for energy savings. Adjustable time-out, 180° detection." },
+  { id: 129, name: "20A Spec-Grade Duplex Outlet — White", category: "Devices & Receptacles", desc: "20A 125V specification-grade commercial outlet. Larger terminals, heavy-duty nylon body. For commercial branch circuits." },
+  { id: 130, name: "20A Commercial Switch — White", category: "Devices & Receptacles", desc: "20A 120/277V commercial-grade single-pole switch. Heavy-duty construction for high-traffic commercial environments." },
+  { id: 131, name: "GFCI 20A TR Outlet — Ivory", category: "Devices & Receptacles", desc: "20A tamper-resistant GFCI receptacle, ivory. For laundry, garage, and outdoor wet-location circuits." },
+  { id: 132, name: "Decorator 1-Gang Wallplate — White", category: "Devices & Receptacles", desc: "1-gang Decora rocker wallplate, white. Screwless snap-in design or traditional screw mount. Matches Decora devices." },
+  { id: 133, name: "2-Gang Duplex Wallplate — White", category: "Devices & Receptacles", desc: "2-gang standard duplex wallplate, white. For two standard receptacles or switches side by side." },
+  { id: 134, name: "RV/Generator 30A Outlet (NEMA TT-30R)", category: "Devices & Receptacles", desc: "30A 125V RV outlet, NEMA TT-30R. For RV pedestal and generator connection points." },
+  { id: 135, name: "240V 20A Outlet NEMA 6-20R — Flush Mount", category: "Devices & Receptacles", desc: "20A 250V 2-pole receptacle, NEMA 6-20R. For 240V power tools, compressors, and equipment without neutral." },
+  { id: 136, name: "L5-30R Twist-Lock 30A 125V Receptacle", category: "Devices & Receptacles", desc: "NEMA L5-30R locking receptacle, 30A 125V. For generator and temporary power connections requiring secure locking." },
+
+  // ===== LIGHTING & CONTROLS (20+ items) =====
+  { id: 137, name: "6\" LED Recessed Light with Junction Box", category: "Lighting & Controls", desc: "6\" LED integrated recessed light, 75W equivalent, 800 lumens. IC-rated, airtight. Includes junction box for retrofit or new construction." },
+  { id: 138, name: "4\" LED Recessed Downlight", category: "Lighting & Controls", desc: "4\" slim LED recessed light, 600 lumens, 3000K/4000K selectable. For low-clearance ceilings and retrofit applications." },
+  { id: 139, name: "LED Shop Light 4ft — 40W", category: "Lighting & Controls", desc: "4ft LED shop/garage light, 40W, 4400 lumens, 5000K daylight. Plug-in or hardwire. Linkable up to 4 fixtures." },
+  { id: 140, name: "LED Shop Light 8ft — 75W", category: "Lighting & Controls", desc: "8ft LED shop light, 75W, 8250 lumens, 5000K. Surface mount. For workshops, warehouses, and parking garages." },
+  { id: 141, name: "LED Vapor Tight Fixture 4ft — 40W", category: "Lighting & Controls", desc: "4ft vapor-tight LED, 40W, 4800 lumens. IP65 rated for wet locations, car washes, and covered parking structures." },
+  { id: 142, name: "LED High Bay Light — 100W", category: "Lighting & Controls", desc: "100W UFO LED high bay, 13,000 lumens, 5000K, 120-277V. For 15-25ft ceilings in warehouses and factories." },
+  { id: 143, name: "LED High Bay Light — 150W", category: "Lighting & Controls", desc: "150W round LED high bay, 19,500 lumens. For 25-35ft mounting heights in distribution centers and industrial facilities." },
+  { id: 144, name: "LED High Bay Light — 200W", category: "Lighting & Controls", desc: "200W UFO LED high bay, 26,000 lumens, 5000K. For 35-45ft ceilings in stadiums, large warehouses, and big box retail." },
+  { id: 145, name: "LED Strip Light Kit — 50ft", category: "Lighting & Controls", desc: "50ft flexible LED strip, 3528 SMD, 12V DC, 3000K warm white. Adhesive backing. For accent, undercabinet, and display lighting." },
+  { id: 146, name: "Exit Sign — LED, Dual Voltage (AC/DC)", category: "Lighting & Controls", desc: "LED exit sign, red letters. 120/277V AC with battery backup for 90-min emergency operation. Universal ceiling/wall/end mount." },
+  { id: 147, name: "Emergency Light — Single Head LED", category: "Lighting & Controls", desc: "Single-head LED emergency light. 120/277V, 90-minute battery backup. Adjustable head, self-testing option available." },
+  { id: 148, name: "Emergency Light — Dual Head LED", category: "Lighting & Controls", desc: "Dual-head LED emergency light, two adjustable lamps. 120/277V, 90-min NiCd battery backup. For commercial egress lighting." },
+  { id: 149, name: "Motion Sensor Security Light — 180° PIR", category: "Lighting & Controls", desc: "Dual-head LED motion security light, 180° PIR, 3500 lumens. Adjustable detection range, sensitivity, and timer. Outdoor, wet-rated." },
+  { id: 150, name: "LED Outdoor Wall Pack — 30W", category: "Lighting & Controls", desc: "30W LED wall pack, dusk-to-dawn photocell optional. 3,900 lumens, 5000K. NEMA 3R, IP65. For commercial exterior lighting." },
+  { id: 151, name: "LED Outdoor Wall Pack — 50W", category: "Lighting & Controls", desc: "50W commercial LED wall pack. 6,500 lumens, 120-277V. Replaces 175W metal halide wall packs." },
+  { id: 152, name: "Photocell Sensor — Twist-Lock (NEMA 7-pin)", category: "Lighting & Controls", desc: "NEMA 7-pin twist-lock photocontrol. Dusk-to-dawn operation for outdoor lighting. 120-277V, 1000W max." },
+  { id: 153, name: "Outdoor Post Lantern — LED", category: "Lighting & Controls", desc: "LED outdoor post/pier mount lantern. 60W equivalent, 800 lumens, 3000K warm white. Weatherproof, matte black finish." },
+  { id: 154, name: "LED T8 Tube Lamp — 4ft, 15W", category: "Lighting & Controls", desc: "15W LED T8 tube lamp, 4ft, 2100 lumens, 4000K. Type A+B (works with or without ballast). Direct fluorescent replacement." },
+  { id: 155, name: "Fluorescent Troffer 2x4 LED Retrofit", category: "Lighting & Controls", desc: "2x4 LED troffer retrofit kit, 50W, 6000 lumens, 4000K. Replaces 4-lamp T8 fluorescent fixtures in suspended ceilings." },
+  { id: 156, name: "LED Canopy Light — 60W", category: "Lighting & Controls", desc: "60W LED canopy/surface mount fixture. For gas station canopies, covered parking, and loading docks. IP65, 8400 lumens." },
+
+  // ===== TOOLS & SUPPLIES (25+ items) =====
+  { id: 157, name: "Klein Wire Stripper/Cutter — 10-18 AWG", category: "Tools & Supplies", desc: "Klein Tools 11045 wire stripper and cutter for 10-18 AWG solid and stranded wire. Loop holes, bolt cutter notch." },
+  { id: 158, name: "Klein Lineman's Pliers — 9\"", category: "Tools & Supplies", desc: "Klein 2000-9NE 9\" lineman's pliers with fish tape puller. High-leverage design, hardened cutting knives, induction-hardened." },
+  { id: 159, name: "Klein Side Cutting Pliers — 8\"", category: "Tools & Supplies", desc: "Klein D2000-28 8\" diagonal cutting pliers. Shear-type cutting blades, for cutting wire, pulling staples, and cutting cable ties." },
+  { id: 160, name: "Ideal Fish Tape — 50ft Steel", category: "Tools & Supplies", desc: "Ideal 31-050 50ft steel fish tape, 1/8\" x 50ft. For pulling wire through conduit. Durable case with easy rewind." },
+  { id: 161, name: "Ideal Fish Tape — 100ft Steel", category: "Tools & Supplies", desc: "Ideal 31-100 100ft steel fish tape. For longer conduit runs. Includes fiberglass handle for insulation." },
+  { id: 162, name: "Klein Conduit Bender — 1/2\" EMT", category: "Tools & Supplies", desc: "Klein 51600 1/2\" EMT conduit bender. High-visibility alignment marks for back-to-back bends, offsets, and saddles." },
+  { id: 163, name: "Klein Conduit Bender — 3/4\" EMT", category: "Tools & Supplies", desc: "Klein 51605 3/4\" conduit bender with 1\" rigid bending shoe. Heavy-duty cast body, easy-to-read degree scale." },
+  { id: 164, name: "Klein Conduit Bender — 1\" EMT", category: "Tools & Supplies", desc: "Klein 51608 1\" EMT conduit bender. Offset arrow, gain marks, and 45/90° markers on formed body." },
+  { id: 165, name: "Non-Contact Voltage Tester", category: "Tools & Supplies", desc: "Non-contact AC voltage tester, 12-1000V. Audible beep and LED indicator. For quickly detecting live circuits safely." },
+  { id: 166, name: "Fluke 117 Electrician's Multimeter", category: "Tools & Supplies", desc: "Fluke 117 True-RMS multimeter with VoltAlert non-contact voltage detection. For electricians in commercial environments." },
+  { id: 167, name: "Ideal Twister Wire Connectors — Assorted (100pk)", category: "Tools & Supplies", desc: "Ideal 30-100 assorted Twister wire connectors, 100-pack with red, yellow, and tan sizes. UL listed, spring action." },
+  { id: 168, name: "Wago 221-413 Lever Connector — 3-Way (50pk)", category: "Tools & Supplies", desc: "Wago 221-413 3-conductor lever-lock splice connectors, 50-pack. 12-28 AWG. Reusable tool-free wire connections." },
+  { id: 169, name: "Wago 221-415 Lever Connector — 5-Way (25pk)", category: "Tools & Supplies", desc: "Wago 221-415 5-conductor lever connectors, 25-pack. For multi-wire junctions and light fixtures. 12-28 AWG." },
+  { id: 170, name: "3M Scotch 33+ Electrical Tape — 3/4\" x 66ft", category: "Tools & Supplies", desc: "3M Scotch Super 33+ vinyl electrical tape. Rated to 600V, 176°F. Black, premium conformable for insulation and phasing." },
+  { id: 171, name: "3M Super 88 Electrical Tape — 3/4\" x 66ft", category: "Tools & Supplies", desc: "3M Super 88 premium vinyl tape. For extreme temperature applications, UV resistant, excellent conformability. 8.5 mil thickness." },
+  { id: 172, name: "Cable Staples 1/2\" — 100pk", category: "Tools & Supplies", desc: "1/2\" insulated cable staples, 100-pack. For securing NM-B and low voltage cables to wood framing per NEC." },
+  { id: 173, name: "Cable Staples 3/4\" — 100pk", category: "Tools & Supplies", desc: "3/4\" insulated staples for securing 12/2, 12/3 Romex to joists and studs. Fits standard hammer-tacker staples." },
+  { id: 174, name: "Cable Staples 1\" — 100pk", category: "Tools & Supplies", desc: "1\" cable staples for securing larger NM cables and MC cable to framing members. 100-pack." },
+  { id: 175, name: "Plastic Cable Ties — Assorted Pack (500pk)", category: "Tools & Supplies", desc: "Assorted nylon cable ties, 500-pack. 4\", 6\", 8\" and 11\" sizes. For bundling wire, securing cable in panels and trays." },
+  { id: 176, name: "EMT One-Hole Strap 1\" (50pk)", category: "Tools & Supplies", desc: "1\" EMT one-hole strap, steel zinc-plated, 50-pack. For securing 1\" EMT conduit to walls, ceilings, and framing." },
+  { id: 177, name: "Panduit Cable Ties — 100pk (11\")", category: "Tools & Supplies", desc: "Panduit PLT4I-C0 11\" heavy-duty nylon cable ties, 100-pack. 50 lb tensile strength. For heavy cable bundle management." },
+  { id: 178, name: "Wire Loom Split Tubing — 1/4\" x 100ft", category: "Tools & Supplies", desc: "1/4\" split wire loom tubing, 100ft. For bundling and protecting wire harnesses, panel wiring, and exposed cables." },
+  { id: 179, name: "Cable Pulling Lubricant — 1 Quart", category: "Tools & Supplies", desc: "Ideal Wire Pulling Lubricant, 1 quart. Reduces friction for pulling THHN and cable in conduit. Non-hardening formula." },
+  { id: 180, name: "Electrical Box Level — Magnetic", category: "Tools & Supplies", desc: "Torpedo level with strong magnets for attaching to metal boxes and conduit. 3 vials, 9\" length. For perfect box alignment." },
+  { id: 181, name: "Klein Tools 6-in-1 Screwdriver", category: "Tools & Supplies", desc: "Klein Tools 32311 6-in-1 multi-bit screwdriver. Includes Phillips #1/#2, slotted 3/16\"/1/4\", square #1/#2. Cushion-grip handle." },
+
+  // ===== SAFETY & PPE (10+ items) =====
+  { id: 182, name: "Salisbury Arc Flash Gloves — Class 0 (Pair)", category: "Safety & PPE", desc: "Salisbury Class 0 rubber insulating gloves, 500V AC rated. For low-voltage electrical work. Includes leather protectors." },
+  { id: 183, name: "Salisbury Arc Flash Gloves — Class 2 (Pair)", category: "Safety & PPE", desc: "Salisbury Class 2 rubber insulating gloves, 17,000V AC rated. For medium-voltage distribution work. ASTM D120 compliant." },
+  { id: 184, name: "Rubber Insulating Blanket — Class 0", category: "Safety & PPE", desc: "Class 0 rubber insulating blanket, 500V rated. For covering energized equipment during work. 36\"x36\" standard size." },
+  { id: 185, name: "Fluke T6-1000 Electrical Tester", category: "Safety & PPE", desc: "Fluke T6-1000 clamp-style voltage and current tester. FieldSense technology measures voltage without test leads. CAT III 1000V." },
+  { id: 186, name: "Klein Insulated Screwdriver Set — 10pc", category: "Safety & PPE", desc: "Klein 33527 10-piece 1000V insulated screwdriver set. Individually tested and certified per IEC 60900. Phillips and slotted." },
+  { id: 187, name: "Safety Glasses — Clear Lens, ANSI Z87.1", category: "Safety & PPE", desc: "Clear anti-scratch safety glasses. ANSI Z87.1 rated. Lightweight wraparound frame, adjustable temples. For general electrical work." },
+  { id: 188, name: "Hard Hat — Class E (White)", category: "Safety & PPE", desc: "Type I Class E electrician hard hat. Rated for 20,000V electrical hazards. 6-point suspension, ratchet adjustment." },
+  { id: 189, name: "LOTO Lockout Padlock Set — 6-Pack", category: "Safety & PPE", desc: "6-pack safety lockout padlocks with unique keys. 1\" shackle, aluminum body. Color-coded for individual lockout procedures." },
+  { id: 190, name: "Hasp Lockout Device — Multi-Lock 6-Hole", category: "Safety & PPE", desc: "6-hole lockout hasp for energy control. Allows multiple workers to lock out a single energy source simultaneously." },
+  { id: 191, name: "Portable Lockout Station — 10 Device", category: "Safety & PPE", desc: "Wall-mount lockout station with 10 common lockout devices. Includes hasps, tags, padlocks, and breaker lockouts." },
+  { id: 192, name: "Electrical Insulating Tape — 1000V Rated", category: "Safety & PPE", desc: "High-voltage insulating tape, 1000V CAT III. For insulating and color-coding terminals, bus bars, and conductors." },
+
+  // ===== MOTORS & CONTROLS (15+ items) =====
+  { id: 193, name: "Square D Magnetic Starter — 1HP 120V", category: "Motors & Controls", desc: "Square D 8536 type magnetic motor starter, 1HP at 120V single-phase. NEMA Size 00. With integral overload relay." },
+  { id: 194, name: "Square D Magnetic Starter — 5HP 460V", category: "Motors & Controls", desc: "Square D NEMA Size 1 magnetic starter, 5HP at 460V 3-phase. Class 10 overload relay, NEMA 1 enclosure." },
+  { id: 195, name: "Square D Magnetic Starter — 10HP 460V", category: "Motors & Controls", desc: "NEMA Size 2 magnetic starter for 10HP at 460V 3-phase. With melting alloy thermal overload relay." },
+  { id: 196, name: "Siemens 3RT Contactor — 3-Pole 30A", category: "Motors & Controls", desc: "Siemens 3RT2026 3-pole IEC contactor, 30A AC3. 120V coil. For motor switching and HVAC compressor control." },
+  { id: 197, name: "Control Transformer 50VA — 480V to 120V", category: "Motors & Controls", desc: "50VA control power transformer. Primary 480V, secondary 120V. For powering 120V control circuits from 480V panels." },
+  { id: 198, name: "Control Transformer 75VA — 240/480V to 120V", category: "Motors & Controls", desc: "75VA CPT, dual primary 240/480V, 120V secondary. For motor control panels and HVAC control power." },
+  { id: 199, name: "Control Transformer 150VA — 480V to 120V", category: "Motors & Controls", desc: "150VA control transformer. For control panels with multiple solenoids, contactors, and pilot devices." },
+  { id: 200, name: "Control Transformer 500VA — 480V to 120V", category: "Motors & Controls", desc: "500VA CPT, 480V primary, 120V/24V secondary options. For large control panels and automation systems." },
+  { id: 201, name: "22mm Push Button — Red (NO+NC)", category: "Motors & Controls", desc: "22mm momentary push button, red, with 1NO+1NC contacts. Flush head. For motor stop, emergency stop, and control panels." },
+  { id: 202, name: "22mm Push Button — Green (NO)", category: "Motors & Controls", desc: "22mm momentary green push button, 1NO contact. Flush or extended head. For motor start and control panel start buttons." },
+  { id: 203, name: "LED Pilot Light — 22mm, Red, 120V", category: "Motors & Controls", desc: "22mm LED pilot light, red lens, 120V AC. For indicating motor running, fault conditions, and panel status." },
+  { id: 204, name: "Overload Relay — NEMA Size 1 Class 10", category: "Motors & Controls", desc: "NEMA Size 1 thermal overload relay with Class 10 trip. Manual/auto reset. For motor protection in magnetic starters." },
+  { id: 205, name: "AutomationDirect GS1 VFD — 1HP 240V", category: "Motors & Controls", desc: "Automation Direct GS1 1HP variable frequency drive, 240V single-phase input, 3-phase output. For speed control of AC motors." },
+  { id: 206, name: "AutomationDirect GS2 VFD — 2HP 240V", category: "Motors & Controls", desc: "GS2-22P0 2HP VFD, 240V 3-phase. Built-in PID, RS-485 Modbus, keypad programming. For pumps, fans, and conveyors." },
+  { id: 207, name: "AutomationDirect GS4 VFD — 5HP 480V", category: "Motors & Controls", desc: "GS4 5HP 480V 3-phase VFD. Sensorless vector control, built-in braking transistor, EMC filter. For demanding applications." },
+  { id: 208, name: "Timer Relay — 24VDC, 0.1s to 100hr", category: "Motors & Controls", desc: "DIN-rail timer relay, 24VDC coil. 16 timing functions, 0.1 second to 100-hour range. SPDT output, for delayed control." },
+  { id: 209, name: "Octal Relay Socket — 8-Pin DIN Mount", category: "Motors & Controls", desc: "8-pin DIN rail relay socket (octal base). Accepts standard 8-pin plug-in relays. Screw terminal connections." },
+  { id: 210, name: "8-Pin Plug-In Relay — 24VDC DPDT", category: "Motors & Controls", desc: "24VDC DPDT plug-in relay, 10A contacts. Octal base. LED indicator. For industrial control panels and PLC output modules." },
+
+  // ===== TRANSFORMERS (10+ items) =====
+  { id: 211, name: "Acme Transformer 1KVA — 120/240V to 24V", category: "Transformers", desc: "Acme 1KVA general purpose transformer. Primary 120/240V, secondary 24V. For HVAC controls, door bells, and low voltage systems." },
+  { id: 212, name: "Acme Transformer 1.5KVA — 240/480V to 120V", category: "Transformers", desc: "1.5KVA step-down transformer, 240/480V primary, 120V secondary. For powering small loads from 480V distribution." },
+  { id: 213, name: "Acme Transformer 3KVA — 480V to 120/240V", category: "Transformers", desc: "3KVA single-phase transformer. 480V primary, 120/240V split secondary. For lighting panels and small power distribution." },
+  { id: 214, name: "Acme Transformer 5KVA — 480V to 120/240V", category: "Transformers", desc: "5KVA general purpose transformer, 480V to 120/240V. For powering 120V lighting and receptacle circuits from 480V systems." },
+  { id: 215, name: "Distribution Transformer 7.5KVA — 3-Phase", category: "Transformers", desc: "7.5KVA 3-phase dry-type distribution transformer. 480V delta primary, 208Y/120V secondary. For small commercial panel feeds." },
+  { id: 216, name: "Distribution Transformer 15KVA — 3-Phase", category: "Transformers", desc: "15KVA 3-phase dry-type transformer, 480V delta to 208Y/120V. TP-1 energy efficient rating. For commercial distribution." },
+  { id: 217, name: "Distribution Transformer 30KVA — 3-Phase", category: "Transformers", desc: "30KVA 3-phase dry-type step-down transformer. 480V to 208Y/120V. For medium commercial and light industrial power distribution." },
+  { id: 218, name: "Buck-Boost Transformer 0.5KVA", category: "Transformers", desc: "0.5KVA buck-boost transformer. Adjusts line voltage +/- 5-20%. For correcting low voltage to motors and equipment." },
+  { id: 219, name: "Isolation Transformer 1KVA — Medical Grade", category: "Transformers", desc: "1KVA medical-grade isolation transformer. Provides isolated power for patient care areas. Meets NFPA 99 requirements." },
+  { id: 220, name: "Stepdown Transformer 45KVA — 480V to 208V", category: "Transformers", desc: "45KVA 3-phase dry-type transformer. For large commercial distribution. 480V delta to 208Y/120V wye configuration." },
+
+  // ===== LOW VOLTAGE & DATA (15+ items) =====
+  { id: 221, name: "Belden Cat6 Bulk Cable 1000ft — Blue", category: "Low Voltage & Data", desc: "Belden 10GX12 Cat6 CMR riser-rated bulk cable, 1000ft. 23 AWG solid copper, 550 MHz. Blue, for horizontal data runs." },
+  { id: 222, name: "Cat6A Bulk Cable 1000ft — Gray", category: "Low Voltage & Data", desc: "Cat6A shielded/unshielded bulk cable, 1000ft. 10Gbps at 100m, 500 MHz. For high-density data center and enterprise networks." },
+  { id: 223, name: "Keystone Jack Cat6 — White (25pk)", category: "Low Voltage & Data", desc: "Cat6 keystone jack, white, 25-pack. 110 punch-down style. For 568A/B wiring. Snap-in for standard keystone faceplates." },
+  { id: 224, name: "Keystone Jack Cat6 — Black (25pk)", category: "Low Voltage & Data", desc: "Cat6 keystone jack, black, 25-pack. 110-style punch-down termination. For wall plates, patch panels, and surface boxes." },
+  { id: 225, name: "24-Port Cat6 Patch Panel — 1U", category: "Low Voltage & Data", desc: "24-port Cat6 patch panel, 1U rack mount. 110-style punch-down. Numbered ports, cable management, angled or straight available." },
+  { id: 226, name: "1U Horizontal Cable Manager — 19\" Rack", category: "Low Voltage & Data", desc: "1U horizontal cable management panel with fingers. Dual-sided, for organizing patch cords in 19\" rack cabinets." },
+  { id: 227, name: "Low Voltage Mounting Bracket — 1-Gang (10pk)", category: "Low Voltage & Data", desc: "Old-work low voltage mounting bracket, 1-gang, 10-pack. Clamp-style for drywall. For keystone jacks, HDMI, and AV plates." },
+  { id: 228, name: "Low Voltage Mounting Bracket — 2-Gang (10pk)", category: "Low Voltage & Data", desc: "2-gang low voltage mounting bracket, 10-pack. Retrofit style for data, coax, and AV outlets in existing drywall." },
+  { id: 229, name: "Structured Media Center 14\" — Flush Mount", category: "Low Voltage & Data", desc: "14\" structured media center (SMC) with hinged door. Flush mount. Holds modules for data, coax, and telephone distribution." },
+  { id: 230, name: "Surface Mount Box — 1-Port (10pk)", category: "Low Voltage & Data", desc: "1-port surface mount keystone box, white, 10-pack. For adding data or phone outlets without opening walls." },
+  { id: 231, name: "Surface Mount Box — 2-Port (10pk)", category: "Low Voltage & Data", desc: "2-port surface mount keystone box, white, 10-pack. For dual data drops at workstations and conference rooms." },
+  { id: 232, name: "Cat6 Inline Coupler (10pk)", category: "Low Voltage & Data", desc: "Cat6 keystone coupler, 10-pack. Connects two Cat6 patch cables or extends cable runs. F/F keystone interface." },
+  { id: 233, name: "Cat6 Patch Cable — 1ft Blue", category: "Low Voltage & Data", desc: "1ft Cat6 snagless patch cord, blue. 24 AWG stranded, RJ45 molded boots. For short rack connections." },
+  { id: 234, name: "Cat6 Patch Cable — 3ft Blue", category: "Low Voltage & Data", desc: "3ft Cat6 patch cable, blue snagless. For connecting patch panel to switch ports in 19\" rack environments." },
+  { id: 235, name: "Cat6 Patch Cable — 5ft Blue", category: "Low Voltage & Data", desc: "5ft Cat6 snagless patch cord, blue. Standard workstation drop connection cable." },
+  { id: 236, name: "Cat6 Patch Cable — 7ft Blue", category: "Low Voltage & Data", desc: "7ft Cat6 patch cable. For longer workstation connections and flexible rack patching requirements." },
+  { id: 237, name: "Cat6 Patch Cable — 10ft Blue", category: "Low Voltage & Data", desc: "10ft Cat6 snagless patch cord, blue. For cross-connects, rack-to-rack patching, and long workstation connections." },
+  { id: 238, name: "Cat6 Patch Cable — 25ft Blue", category: "Low Voltage & Data", desc: "25ft Cat6 patch cable, blue. For longer runs between equipment rooms and work areas." },
+  { id: 239, name: "Coax Cable RG6 — 500ft Spool", category: "Low Voltage & Data", desc: "RG6 coaxial cable, 500ft spool. For cable TV, satellite, and antenna distribution. 3 GHz bandwidth, quad-shield available." },
+  { id: 240, name: "F-Connector RG6 Compression (50pk)", category: "Low Voltage & Data", desc: "RG6 compression F-connectors, 50-pack. For professional coax terminations. Weatherproof, corrosion-resistant nickel plate." }
+];
+
+function filterProducts() {
+  const search = document.getElementById('search').value.toLowerCase();
+  const activeCategory = document.querySelector('.cat-pill.active').dataset.cat;
+  const cards = document.querySelectorAll('.product-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const name = card.dataset.name.toLowerCase();
+    const cat = card.dataset.cat;
+    const desc = card.dataset.desc.toLowerCase();
+    const matchSearch = !search || name.includes(search) || desc.includes(search);
+    const matchCat = activeCategory === 'All' || cat === activeCategory;
+    card.style.display = (matchSearch && matchCat) ? '' : 'none';
+    if (matchSearch && matchCat) visible++;
+  });
+  document.getElementById('searchCount').textContent = visible + ' products';
+}
+
+function setCategory(cat, el) {
+  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  filterProducts();
+}
+
+window.onload = () => {
+  document.getElementById('searchCount').textContent = document.querySelectorAll('.product-card').length + ' products';
+};
+</script>
+<div class="grid-wrap">
+<div class="product-grid" id="productGrid">
+  <div class="product-card" data-name="14 AWG THHN Wire — Black" data-cat="Wire &amp; Cable" data-desc="Single conductor, 600V, 90°C dry/75°C wet. Nylon-jacketed thermoplastic. Meets NEC requirements for branch circuits. Sold by the foot or 500ft spool.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>14 AWG THHN Wire — Black</h3>
+    <p>Single conductor, 600V, 90°C dry/75°C wet. Nylon-jacketed thermoplastic. Meets NEC requirements for branch circuits. Sold by the foot or 500ft spool.</p>
+  </div>
+  <div class="product-card" data-name="14 AWG THHN Wire — White" data-cat="Wire &amp; Cable" data-desc="Single conductor THHN/THWN-2, 600V. White jacket for neutral identification. 90°C dry, 75°C wet rating.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>14 AWG THHN Wire — White</h3>
+    <p>Single conductor THHN/THWN-2, 600V. White jacket for neutral identification. 90°C dry, 75°C wet rating.</p>
+  </div>
+  <div class="product-card" data-name="14 AWG THHN Wire — Green" data-cat="Wire &amp; Cable" data-desc="Single conductor THHN, 600V. Green jacket per NEC grounding conductor requirements. 90°C dry rating.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>14 AWG THHN Wire — Green</h3>
+    <p>Single conductor THHN, 600V. Green jacket per NEC grounding conductor requirements. 90°C dry rating.</p>
+  </div>
+  <div class="product-card" data-name="14 AWG THHN Wire — Red" data-cat="Wire &amp; Cable" data-desc="Single conductor THHN/THWN-2, 600V. Red jacket for hot leg identification in multi-wire circuits.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>14 AWG THHN Wire — Red</h3>
+    <p>Single conductor THHN/THWN-2, 600V. Red jacket for hot leg identification in multi-wire circuits.</p>
+  </div>
+  <div class="product-card" data-name="12 AWG THHN Wire — Black" data-cat="Wire &amp; Cable" data-desc="12 AWG single conductor, 600V, THHN/THWN-2. Standard for 20A branch circuits. Nylon jacket, oil and gasoline resistant.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>12 AWG THHN Wire — Black</h3>
+    <p>12 AWG single conductor, 600V, THHN/THWN-2. Standard for 20A branch circuits. Nylon jacket, oil and gasoline resistant.</p>
+  </div>
+  <div class="product-card" data-name="12 AWG THHN Wire — White" data-cat="Wire &amp; Cable" data-desc="12 AWG THHN/THWN-2, 600V. White neutral conductor for 20A circuits. UL listed.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>12 AWG THHN Wire — White</h3>
+    <p>12 AWG THHN/THWN-2, 600V. White neutral conductor for 20A circuits. UL listed.</p>
+  </div>
+  <div class="product-card" data-name="10 AWG THHN Wire — Black" data-cat="Wire &amp; Cable" data-desc="10 AWG THHN, 600V. Used for 30A circuits, dryers, water heaters. Stranded or solid available.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>10 AWG THHN Wire — Black</h3>
+    <p>10 AWG THHN, 600V. Used for 30A circuits, dryers, water heaters. Stranded or solid available.</p>
+  </div>
+  <div class="product-card" data-name="10 AWG THHN Wire — Red" data-cat="Wire &amp; Cable" data-desc="10 AWG THHN/THWN-2, 600V. Red jacket. Used as second hot leg in 240V 30A circuits.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>10 AWG THHN Wire — Red</h3>
+    <p>10 AWG THHN/THWN-2, 600V. Red jacket. Used as second hot leg in 240V 30A circuits.</p>
+  </div>
+  <div class="product-card" data-name="6 AWG THHN Wire — Black" data-cat="Wire &amp; Cable" data-desc="6 AWG stranded THHN, 600V. Used for 60A feeders, EV charger circuits, sub-panels.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>6 AWG THHN Wire — Black</h3>
+    <p>6 AWG stranded THHN, 600V. Used for 60A feeders, EV charger circuits, sub-panels.</p>
+  </div>
+  <div class="product-card" data-name="4 AWG THHN Wire — Black" data-cat="Wire &amp; Cable" data-desc="4 AWG stranded THHN/THWN-2, 600V. 85A ampacity. Used for large feeder runs and service conductors.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>4 AWG THHN Wire — Black</h3>
+    <p>4 AWG stranded THHN/THWN-2, 600V. 85A ampacity. Used for large feeder runs and service conductors.</p>
+  </div>
+  <div class="product-card" data-name="2 AWG THHN Wire — Black" data-cat="Wire &amp; Cable" data-desc="2 AWG stranded THHN, 600V. 115A ampacity. Service entrance feeders, large sub-panel feeds.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>2 AWG THHN Wire — Black</h3>
+    <p>2 AWG stranded THHN, 600V. 115A ampacity. Service entrance feeders, large sub-panel feeds.</p>
+  </div>
+  <div class="product-card" data-name="1/0 AWG THHN Wire — Black" data-cat="Wire &amp; Cable" data-desc="1/0 AWG (0 gauge) stranded THHN, 600V. 150A ampacity. Large service feeders and industrial applications.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>1/0 AWG THHN Wire — Black</h3>
+    <p>1/0 AWG (0 gauge) stranded THHN, 600V. 150A ampacity. Large service feeders and industrial applications.</p>
+  </div>
+  <div class="product-card" data-name="2/0 AWG THHN Wire — Black" data-cat="Wire &amp; Cable" data-desc="2/0 AWG stranded THHN, 600V. 175A ampacity. Service entrance conductors and large feeder circuits.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>2/0 AWG THHN Wire — Black</h3>
+    <p>2/0 AWG stranded THHN, 600V. 175A ampacity. Service entrance conductors and large feeder circuits.</p>
+  </div>
+  <div class="product-card" data-name="4/0 AWG THHN Wire — Black" data-cat="Wire &amp; Cable" data-desc="4/0 AWG stranded THHN/THWN-2, 600V. 230A ampacity. 200A service entrance conductors.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>4/0 AWG THHN Wire — Black</h3>
+    <p>4/0 AWG stranded THHN/THWN-2, 600V. 230A ampacity. 200A service entrance conductors.</p>
+  </div>
+  <div class="product-card" data-name="Romex NM-B 14/2 Wire" data-cat="Wire &amp; Cable" data-desc="14 AWG 2-conductor with ground, non-metallic sheathed cable. Rated for 15A circuits in residential wiring. UL listed, 600V, 90°C. Sold by the foot or 250ft roll.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>Romex NM-B 14/2 Wire</h3>
+    <p>14 AWG 2-conductor with ground, non-metallic sheathed cable. Rated for 15A circuits in residential wiring. UL listed, 600V, 90°C. Sold by the foot or 250ft roll.</p>
+  </div>
+  <div class="product-card" data-name="Romex NM-B 14/3 Wire" data-cat="Wire &amp; Cable" data-desc="14 AWG 3-conductor with ground NM-B cable. Used for 3-way switch circuits and split receptacles. 15A rated.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>Romex NM-B 14/3 Wire</h3>
+    <p>14 AWG 3-conductor with ground NM-B cable. Used for 3-way switch circuits and split receptacles. 15A rated.</p>
+  </div>
+  <div class="product-card" data-name="Romex NM-B 12/2 Wire" data-cat="Wire &amp; Cable" data-desc="12 AWG 2-conductor with ground NM-B. Standard for 20A kitchen, bathroom, and laundry circuits.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>Romex NM-B 12/2 Wire</h3>
+    <p>12 AWG 2-conductor with ground NM-B. Standard for 20A kitchen, bathroom, and laundry circuits.</p>
+  </div>
+  <div class="product-card" data-name="Romex NM-B 12/3 Wire" data-cat="Wire &amp; Cable" data-desc="12 AWG 3-conductor with ground NM-B. Used for 3-way switch legs and MWBC circuits at 20A.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>Romex NM-B 12/3 Wire</h3>
+    <p>12 AWG 3-conductor with ground NM-B. Used for 3-way switch legs and MWBC circuits at 20A.</p>
+  </div>
+  <div class="product-card" data-name="Romex NM-B 10/2 Wire" data-cat="Wire &amp; Cable" data-desc="10 AWG 2-conductor with ground NM-B. Ideal for 30A dryer and water heater circuits.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>Romex NM-B 10/2 Wire</h3>
+    <p>10 AWG 2-conductor with ground NM-B. Ideal for 30A dryer and water heater circuits.</p>
+  </div>
+  <div class="product-card" data-name="Romex NM-B 10/3 Wire" data-cat="Wire &amp; Cable" data-desc="10 AWG 3-conductor with ground NM-B. Used for 240V/30A circuits requiring separate hot legs.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>Romex NM-B 10/3 Wire</h3>
+    <p>10 AWG 3-conductor with ground NM-B. Used for 240V/30A circuits requiring separate hot legs.</p>
+  </div>
+  <div class="product-card" data-name="Romex NM-B 8/3 Wire" data-cat="Wire &amp; Cable" data-desc="8 AWG 3-conductor with ground NM-B. For 40A electric ranges and large appliances.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>Romex NM-B 8/3 Wire</h3>
+    <p>8 AWG 3-conductor with ground NM-B. For 40A electric ranges and large appliances.</p>
+  </div>
+  <div class="product-card" data-name="MC Cable 12/2 (Metal Clad)" data-cat="Wire &amp; Cable" data-desc="12 AWG 2-conductor metal clad cable with aluminum armor. Used in commercial and industrial branch circuits. Flexible and easy to pull.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>MC Cable 12/2 (Metal Clad)</h3>
+    <p>12 AWG 2-conductor metal clad cable with aluminum armor. Used in commercial and industrial branch circuits. Flexible and easy to pull.</p>
+  </div>
+  <div class="product-card" data-name="MC Cable 12/3 (Metal Clad)" data-cat="Wire &amp; Cable" data-desc="12 AWG 3-conductor MC cable with aluminum interlocked armor. THHN conductors inside. Replaces EMT runs in many applications.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>MC Cable 12/3 (Metal Clad)</h3>
+    <p>12 AWG 3-conductor MC cable with aluminum interlocked armor. THHN conductors inside. Replaces EMT runs in many applications.</p>
+  </div>
+  <div class="product-card" data-name="MC Cable 10/2 (Metal Clad)" data-cat="Wire &amp; Cable" data-desc="10 AWG 2-conductor MC cable. For 30A branch circuits in commercial construction. Armored protection, UL listed.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>MC Cable 10/2 (Metal Clad)</h3>
+    <p>10 AWG 2-conductor MC cable. For 30A branch circuits in commercial construction. Armored protection, UL listed.</p>
+  </div>
+  <div class="product-card" data-name="SER Service Entrance Cable 1/0-1/0-1/0-1 AWG" data-cat="Wire &amp; Cable" data-desc="Service entrance round cable. Three 1/0 AWG aluminum conductors plus 1 AWG neutral. 150A service rating.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>SER Service Entrance Cable 1/0-1/0-1/0-1 AWG</h3>
+    <p>Service entrance round cable. Three 1/0 AWG aluminum conductors plus 1 AWG neutral. 150A service rating.</p>
+  </div>
+  <div class="product-card" data-name="SER Service Entrance Cable 2/0-2/0-2/0-1 AWG" data-cat="Wire &amp; Cable" data-desc="SER cable with three 2/0 AWG and 1 AWG neutral aluminum conductors. 175A service. Weather-resistant jacket.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>SER Service Entrance Cable 2/0-2/0-2/0-1 AWG</h3>
+    <p>SER cable with three 2/0 AWG and 1 AWG neutral aluminum conductors. 175A service. Weather-resistant jacket.</p>
+  </div>
+  <div class="product-card" data-name="SER Service Entrance Cable 4/0-4/0-2/0 AWG" data-cat="Wire &amp; Cable" data-desc="200A service entrance cable. Two 4/0 AWG phase conductors and 2/0 neutral. Aluminum, XHHW insulated.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>SER Service Entrance Cable 4/0-4/0-2/0 AWG</h3>
+    <p>200A service entrance cable. Two 4/0 AWG phase conductors and 2/0 neutral. Aluminum, XHHW insulated.</p>
+  </div>
+  <div class="product-card" data-name="UF-B Underground Feeder 12/2" data-cat="Wire &amp; Cable" data-desc="12 AWG 2-conductor with ground underground feeder cable. Sunlight resistant, direct burial rated. For outdoor circuits and landscape lighting.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>UF-B Underground Feeder 12/2</h3>
+    <p>12 AWG 2-conductor with ground underground feeder cable. Sunlight resistant, direct burial rated. For outdoor circuits and landscape lighting.</p>
+  </div>
+  <div class="product-card" data-name="UF-B Underground Feeder 14/2" data-cat="Wire &amp; Cable" data-desc="14 AWG 2-conductor UF-B direct burial cable. Used for outdoor outlets, landscape circuits, and yard lighting.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>UF-B Underground Feeder 14/2</h3>
+    <p>14 AWG 2-conductor UF-B direct burial cable. Used for outdoor outlets, landscape circuits, and yard lighting.</p>
+  </div>
+  <div class="product-card" data-name="XHHW-2 Aluminum Wire 2 AWG" data-cat="Wire &amp; Cable" data-desc="2 AWG aluminum XHHW-2, 600V, 90°C wet/dry. Used for service entrance feeders and large circuits. UL listed.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>XHHW-2 Aluminum Wire 2 AWG</h3>
+    <p>2 AWG aluminum XHHW-2, 600V, 90°C wet/dry. Used for service entrance feeders and large circuits. UL listed.</p>
+  </div>
+  <div class="product-card" data-name="Low Voltage Thermostat Wire 18/5 — 50ft" data-cat="Wire &amp; Cable" data-desc="18 AWG 5-conductor thermostat cable. Color-coded wires for HVAC control wiring. CL2 rated. 50ft roll.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>Low Voltage Thermostat Wire 18/5 — 50ft</h3>
+    <p>18 AWG 5-conductor thermostat cable. Color-coded wires for HVAC control wiring. CL2 rated. 50ft roll.</p>
+  </div>
+  <div class="product-card" data-name="Low Voltage Thermostat Wire 18/8 — 50ft" data-cat="Wire &amp; Cable" data-desc="18 AWG 8-conductor thermostat/control cable for advanced HVAC systems with staging, humidistats, and accessories.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>Low Voltage Thermostat Wire 18/8 — 50ft</h3>
+    <p>18 AWG 8-conductor thermostat/control cable for advanced HVAC systems with staging, humidistats, and accessories.</p>
+  </div>
+  <div class="product-card" data-name="Cat6 Plenum Cable 1000ft — Blue" data-cat="Wire &amp; Cable" data-desc="Cat6 plenum-rated (CMP) bulk cable. 23 AWG solid conductors, 550 MHz, supports 10G Ethernet. For air-handling spaces.">
+    <span class="cat-badge">Wire &amp; Cable</span>
+    <div class="product-icon">🔌</div>
+    <h3>Cat6 Plenum Cable 1000ft — Blue</h3>
+    <p>Cat6 plenum-rated (CMP) bulk cable. 23 AWG solid conductors, 550 MHz, supports 10G Ethernet. For air-handling spaces.</p>
+  </div>
+  <div class="product-card" data-name="EMT Conduit 1/2&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="1/2&quot; electrical metallic tubing, 10ft stick. Hot-dip galvanized steel. For exposed and concealed wiring in dry/damp locations.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT Conduit 1/2&quot; — 10ft</h3>
+    <p>1/2&quot; electrical metallic tubing, 10ft stick. Hot-dip galvanized steel. For exposed and concealed wiring in dry/damp locations.</p>
+  </div>
+  <div class="product-card" data-name="EMT Conduit 3/4&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="3/4&quot; EMT, 10ft. Galvanized steel. The most common commercial conduit size for 12 AWG circuits.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT Conduit 3/4&quot; — 10ft</h3>
+    <p>3/4&quot; EMT, 10ft. Galvanized steel. The most common commercial conduit size for 12 AWG circuits.</p>
+  </div>
+  <div class="product-card" data-name="EMT Conduit 1&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="1&quot; EMT conduit, 10ft stick. Galvanized. For larger feeder conduit runs and panel feeds.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT Conduit 1&quot; — 10ft</h3>
+    <p>1&quot; EMT conduit, 10ft stick. Galvanized. For larger feeder conduit runs and panel feeds.</p>
+  </div>
+  <div class="product-card" data-name="EMT Conduit 1-1/4&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="1-1/4&quot; EMT, 10ft. Used for sub-panel feeders and larger conductor bundles.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT Conduit 1-1/4&quot; — 10ft</h3>
+    <p>1-1/4&quot; EMT, 10ft. Used for sub-panel feeders and larger conductor bundles.</p>
+  </div>
+  <div class="product-card" data-name="EMT Conduit 1-1/2&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="1-1/2&quot; EMT, 10ft. For large feeder runs and 3-phase circuits in commercial buildings.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT Conduit 1-1/2&quot; — 10ft</h3>
+    <p>1-1/2&quot; EMT, 10ft. For large feeder runs and 3-phase circuits in commercial buildings.</p>
+  </div>
+  <div class="product-card" data-name="EMT Conduit 2&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="2&quot; EMT conduit, 10ft. For main feeders, 200A panel feeds, and high-capacity circuits.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT Conduit 2&quot; — 10ft</h3>
+    <p>2&quot; EMT conduit, 10ft. For main feeders, 200A panel feeds, and high-capacity circuits.</p>
+  </div>
+  <div class="product-card" data-name="EMT Conduit 3&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="3&quot; EMT, 10ft. Large trunk conduit for service entrances and distribution systems.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT Conduit 3&quot; — 10ft</h3>
+    <p>3&quot; EMT, 10ft. Large trunk conduit for service entrances and distribution systems.</p>
+  </div>
+  <div class="product-card" data-name="EMT Conduit 4&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="4&quot; EMT, 10ft. Used in service entrance applications and large underground feeders.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT Conduit 4&quot; — 10ft</h3>
+    <p>4&quot; EMT, 10ft. Used in service entrance applications and large underground feeders.</p>
+  </div>
+  <div class="product-card" data-name="PVC Schedule 40 Conduit 1/2&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="1/2&quot; Schedule 40 PVC conduit, 10ft. Grey. For direct burial and concrete encasement. Sunlight-resistant jacket available.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>PVC Schedule 40 Conduit 1/2&quot; — 10ft</h3>
+    <p>1/2&quot; Schedule 40 PVC conduit, 10ft. Grey. For direct burial and concrete encasement. Sunlight-resistant jacket available.</p>
+  </div>
+  <div class="product-card" data-name="PVC Schedule 40 Conduit 3/4&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="3/4&quot; PVC Sch 40, 10ft. Direct burial and underground duct bank applications.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>PVC Schedule 40 Conduit 3/4&quot; — 10ft</h3>
+    <p>3/4&quot; PVC Sch 40, 10ft. Direct burial and underground duct bank applications.</p>
+  </div>
+  <div class="product-card" data-name="PVC Schedule 40 Conduit 1&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="1&quot; Schedule 40 PVC conduit, 10ft. For underground service and branch circuit conduit.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>PVC Schedule 40 Conduit 1&quot; — 10ft</h3>
+    <p>1&quot; Schedule 40 PVC conduit, 10ft. For underground service and branch circuit conduit.</p>
+  </div>
+  <div class="product-card" data-name="PVC Schedule 40 Conduit 2&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="2&quot; PVC Sch 40, 10ft. Used for underground feeder conduit and telecom duct banks.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>PVC Schedule 40 Conduit 2&quot; — 10ft</h3>
+    <p>2&quot; PVC Sch 40, 10ft. Used for underground feeder conduit and telecom duct banks.</p>
+  </div>
+  <div class="product-card" data-name="PVC Schedule 40 Conduit 4&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="4&quot; PVC Sch 40, 10ft. For large underground service conduit and telecommunications infrastructure.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>PVC Schedule 40 Conduit 4&quot; — 10ft</h3>
+    <p>4&quot; PVC Sch 40, 10ft. For large underground service conduit and telecommunications infrastructure.</p>
+  </div>
+  <div class="product-card" data-name="Rigid Galvanized Conduit (RMC) 1/2&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="1/2&quot; rigid metallic conduit, hot-dip galvanized. For outdoor, exposed, and hazardous locations. Highest physical protection rating.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>Rigid Galvanized Conduit (RMC) 1/2&quot; — 10ft</h3>
+    <p>1/2&quot; rigid metallic conduit, hot-dip galvanized. For outdoor, exposed, and hazardous locations. Highest physical protection rating.</p>
+  </div>
+  <div class="product-card" data-name="Rigid Galvanized Conduit (RMC) 3/4&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="3/4&quot; RMC, 10ft. Threaded ends. For exterior applications and areas requiring maximum mechanical protection.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>Rigid Galvanized Conduit (RMC) 3/4&quot; — 10ft</h3>
+    <p>3/4&quot; RMC, 10ft. Threaded ends. For exterior applications and areas requiring maximum mechanical protection.</p>
+  </div>
+  <div class="product-card" data-name="Rigid Galvanized Conduit (RMC) 1&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="1&quot; rigid galvanized conduit, 10ft. For service entrance masts and outdoor feeder conduit.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>Rigid Galvanized Conduit (RMC) 1&quot; — 10ft</h3>
+    <p>1&quot; rigid galvanized conduit, 10ft. For service entrance masts and outdoor feeder conduit.</p>
+  </div>
+  <div class="product-card" data-name="Rigid Galvanized Conduit (RMC) 2&quot; — 10ft" data-cat="Conduit &amp; Fittings" data-desc="2&quot; RMC, 10ft. Threaded. Service entrance and large outdoor feeder conduit applications.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>Rigid Galvanized Conduit (RMC) 2&quot; — 10ft</h3>
+    <p>2&quot; RMC, 10ft. Threaded. Service entrance and large outdoor feeder conduit applications.</p>
+  </div>
+  <div class="product-card" data-name="Flexible Metal Conduit (FMC) 1/2&quot; — 25ft" data-cat="Conduit &amp; Fittings" data-desc="1/2&quot; steel flexible metal conduit, 25ft coil. For final connections to motors, HVAC units, and equipment.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>Flexible Metal Conduit (FMC) 1/2&quot; — 25ft</h3>
+    <p>1/2&quot; steel flexible metal conduit, 25ft coil. For final connections to motors, HVAC units, and equipment.</p>
+  </div>
+  <div class="product-card" data-name="Liquid-Tight Flexible Conduit (LFMC) 1/2&quot; — 25ft" data-cat="Conduit &amp; Fittings" data-desc="1/2&quot; LFMC with PVC jacket. Watertight flexible conduit for wet locations and exterior connections to equipment.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>Liquid-Tight Flexible Conduit (LFMC) 1/2&quot; — 25ft</h3>
+    <p>1/2&quot; LFMC with PVC jacket. Watertight flexible conduit for wet locations and exterior connections to equipment.</p>
+  </div>
+  <div class="product-card" data-name="EMT Set-Screw Connector 1/2&quot;" data-cat="Conduit &amp; Fittings" data-desc="1/2&quot; EMT set-screw connector (steel). For connecting EMT to boxes and enclosures. Steel with zinc electroplate.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT Set-Screw Connector 1/2&quot;</h3>
+    <p>1/2&quot; EMT set-screw connector (steel). For connecting EMT to boxes and enclosures. Steel with zinc electroplate.</p>
+  </div>
+  <div class="product-card" data-name="EMT Compression Connector 1/2&quot;" data-cat="Conduit &amp; Fittings" data-desc="1/2&quot; compression-type EMT connector. Raintight and concrete-tight. For wet locations and concrete pours.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT Compression Connector 1/2&quot;</h3>
+    <p>1/2&quot; compression-type EMT connector. Raintight and concrete-tight. For wet locations and concrete pours.</p>
+  </div>
+  <div class="product-card" data-name="EMT Set-Screw Connector 3/4&quot;" data-cat="Conduit &amp; Fittings" data-desc="3/4&quot; EMT set-screw connector. Steel zinc-plated. Standard indoor conduit box connection fitting.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT Set-Screw Connector 3/4&quot;</h3>
+    <p>3/4&quot; EMT set-screw connector. Steel zinc-plated. Standard indoor conduit box connection fitting.</p>
+  </div>
+  <div class="product-card" data-name="EMT Compression Connector 3/4&quot;" data-cat="Conduit &amp; Fittings" data-desc="3/4&quot; compression EMT connector. Raintight for wet-location installations.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT Compression Connector 3/4&quot;</h3>
+    <p>3/4&quot; compression EMT connector. Raintight for wet-location installations.</p>
+  </div>
+  <div class="product-card" data-name="EMT Set-Screw Coupling 1/2&quot;" data-cat="Conduit &amp; Fittings" data-desc="1/2&quot; EMT set-screw coupling for joining two lengths of EMT. Set-screw type for dry/damp locations.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT Set-Screw Coupling 1/2&quot;</h3>
+    <p>1/2&quot; EMT set-screw coupling for joining two lengths of EMT. Set-screw type for dry/damp locations.</p>
+  </div>
+  <div class="product-card" data-name="EMT Set-Screw Coupling 3/4&quot;" data-cat="Conduit &amp; Fittings" data-desc="3/4&quot; EMT coupling, set-screw type. Zinc-plated steel. For inline conduit connections.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT Set-Screw Coupling 3/4&quot;</h3>
+    <p>3/4&quot; EMT coupling, set-screw type. Zinc-plated steel. For inline conduit connections.</p>
+  </div>
+  <div class="product-card" data-name="PVC Elbow 90° 3/4&quot; — Schedule 40" data-cat="Conduit &amp; Fittings" data-desc="3/4&quot; Schedule 40 PVC 90° elbow. For underground conduit direction changes. Solvent-weld connections.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>PVC Elbow 90° 3/4&quot; — Schedule 40</h3>
+    <p>3/4&quot; Schedule 40 PVC 90° elbow. For underground conduit direction changes. Solvent-weld connections.</p>
+  </div>
+  <div class="product-card" data-name="PVC Elbow 90° 2&quot; — Schedule 40" data-cat="Conduit &amp; Fittings" data-desc="2&quot; PVC Sch 40 sweep elbow, 90°. Long radius for easier wire pulling in underground duct banks.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>PVC Elbow 90° 2&quot; — Schedule 40</h3>
+    <p>2&quot; PVC Sch 40 sweep elbow, 90°. Long radius for easier wire pulling in underground duct banks.</p>
+  </div>
+  <div class="product-card" data-name="LB Conduit Body 3/4&quot; — Aluminum" data-cat="Conduit &amp; Fittings" data-desc="3/4&quot; aluminum LB conduit body with cover and gasket. For 90° pull and direction changes in EMT/rigid conduit systems.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>LB Conduit Body 3/4&quot; — Aluminum</h3>
+    <p>3/4&quot; aluminum LB conduit body with cover and gasket. For 90° pull and direction changes in EMT/rigid conduit systems.</p>
+  </div>
+  <div class="product-card" data-name="LL Conduit Body 3/4&quot; — Aluminum" data-cat="Conduit &amp; Fittings" data-desc="3/4&quot; aluminum LL conduit body. Left-turn 90° fitting with removable cover for wire pulling access.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>LL Conduit Body 3/4&quot; — Aluminum</h3>
+    <p>3/4&quot; aluminum LL conduit body. Left-turn 90° fitting with removable cover for wire pulling access.</p>
+  </div>
+  <div class="product-card" data-name="LR Conduit Body 3/4&quot; — Aluminum" data-cat="Conduit &amp; Fittings" data-desc="3/4&quot; aluminum LR conduit body (right-turn). With cover and neoprene gasket for wet locations.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>LR Conduit Body 3/4&quot; — Aluminum</h3>
+    <p>3/4&quot; aluminum LR conduit body (right-turn). With cover and neoprene gasket for wet locations.</p>
+  </div>
+  <div class="product-card" data-name="T-Body Conduit Fitting 3/4&quot; — Aluminum" data-cat="Conduit &amp; Fittings" data-desc="3/4&quot; T-type conduit body. Tee-shaped for three-way wire access point in conduit systems.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>T-Body Conduit Fitting 3/4&quot; — Aluminum</h3>
+    <p>3/4&quot; T-type conduit body. Tee-shaped for three-way wire access point in conduit systems.</p>
+  </div>
+  <div class="product-card" data-name="EMT One-Hole Strap 1/2&quot; (100pk)" data-cat="Conduit &amp; Fittings" data-desc="1/2&quot; EMT one-hole steel strap, 100-pack. For securing EMT conduit to framing, concrete, and surfaces.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT One-Hole Strap 1/2&quot; (100pk)</h3>
+    <p>1/2&quot; EMT one-hole steel strap, 100-pack. For securing EMT conduit to framing, concrete, and surfaces.</p>
+  </div>
+  <div class="product-card" data-name="EMT One-Hole Strap 3/4&quot; (100pk)" data-cat="Conduit &amp; Fittings" data-desc="3/4&quot; EMT one-hole strap, steel, 100-pack. Supports EMT at required intervals per NEC.">
+    <span class="cat-badge">Conduit &amp; Fittings</span>
+    <div class="product-icon">🔧</div>
+    <h3>EMT One-Hole Strap 3/4&quot; (100pk)</h3>
+    <p>3/4&quot; EMT one-hole strap, steel, 100-pack. Supports EMT at required intervals per NEC.</p>
+  </div>
+  <div class="product-card" data-name="1-Gang Old Work Plastic Box" data-cat="Boxes &amp; Enclosures" data-desc="Single-gang electrical box for remodel/retrofit work. Clamp-style anchors to drywall. 18 cu in capacity. Ideal for switches and receptacles.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>1-Gang Old Work Plastic Box</h3>
+    <p>Single-gang electrical box for remodel/retrofit work. Clamp-style anchors to drywall. 18 cu in capacity. Ideal for switches and receptacles.</p>
+  </div>
+  <div class="product-card" data-name="1-Gang New Work Plastic Box" data-cat="Boxes &amp; Enclosures" data-desc="Single-gang nail-on plastic box for new construction. Integral nails for wood framing. 18 cu in.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>1-Gang New Work Plastic Box</h3>
+    <p>Single-gang nail-on plastic box for new construction. Integral nails for wood framing. 18 cu in.</p>
+  </div>
+  <div class="product-card" data-name="2-Gang Old Work Plastic Box" data-cat="Boxes &amp; Enclosures" data-desc="2-gang plastic retrofit box. Drywall-mount with adjustable wings. 34 cu in. For double switches, GFCI combos.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>2-Gang Old Work Plastic Box</h3>
+    <p>2-gang plastic retrofit box. Drywall-mount with adjustable wings. 34 cu in. For double switches, GFCI combos.</p>
+  </div>
+  <div class="product-card" data-name="2-Gang New Work Plastic Box" data-cat="Boxes &amp; Enclosures" data-desc="2-gang nail-on new work box. 30 cu in capacity. For dual switches or receptacles in framed walls.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>2-Gang New Work Plastic Box</h3>
+    <p>2-gang nail-on new work box. 30 cu in capacity. For dual switches or receptacles in framed walls.</p>
+  </div>
+  <div class="product-card" data-name="3-Gang New Work Plastic Box" data-cat="Boxes &amp; Enclosures" data-desc="3-gang plastic new construction box. 42 cu in. For three switches, combination switch/receptacle arrangements.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>3-Gang New Work Plastic Box</h3>
+    <p>3-gang plastic new construction box. 42 cu in. For three switches, combination switch/receptacle arrangements.</p>
+  </div>
+  <div class="product-card" data-name="4&quot; Square Metal Box — 1-1/2&quot; Deep" data-cat="Boxes &amp; Enclosures" data-desc="4&quot; square steel junction/device box, 1-1/2&quot; deep. 21 cu in. Standard commercial wiring box for switches and outlets with plaster ring.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>4&quot; Square Metal Box — 1-1/2&quot; Deep</h3>
+    <p>4&quot; square steel junction/device box, 1-1/2&quot; deep. 21 cu in. Standard commercial wiring box for switches and outlets with plaster ring.</p>
+  </div>
+  <div class="product-card" data-name="4&quot; Square Metal Box — 2-1/8&quot; Deep" data-cat="Boxes &amp; Enclosures" data-desc="4&quot; square steel box, 2-1/8&quot; deep. 30.3 cu in. For high-fill applications and multiple conductors in commercial work.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>4&quot; Square Metal Box — 2-1/8&quot; Deep</h3>
+    <p>4&quot; square steel box, 2-1/8&quot; deep. 30.3 cu in. For high-fill applications and multiple conductors in commercial work.</p>
+  </div>
+  <div class="product-card" data-name="4-11/16&quot; Square Metal Box — 2-1/8&quot; Deep" data-cat="Boxes &amp; Enclosures" data-desc="4-11/16&quot; (4-3/4&quot;) square steel box. 42 cu in. Used for large fill applications, panels, and high-capacity junction points.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>4-11/16&quot; Square Metal Box — 2-1/8&quot; Deep</h3>
+    <p>4-11/16&quot; (4-3/4&quot;) square steel box. 42 cu in. Used for large fill applications, panels, and high-capacity junction points.</p>
+  </div>
+  <div class="product-card" data-name="4&quot; Round Ceiling Pan Box" data-cat="Boxes &amp; Enclosures" data-desc="4&quot; round pan (octagon) ceiling box, 1-1/2&quot; deep. 15.5 cu in. For ceiling light fixtures and junction points.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>4&quot; Round Ceiling Pan Box</h3>
+    <p>4&quot; round pan (octagon) ceiling box, 1-1/2&quot; deep. 15.5 cu in. For ceiling light fixtures and junction points.</p>
+  </div>
+  <div class="product-card" data-name="Weatherproof In-Use Cover — 1-Gang" data-cat="Boxes &amp; Enclosures" data-desc="1-gang weatherproof while-in-use outlet cover. Clears up to 4&quot; plugs. UL listed for wet locations. Meets NEC 406.9.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>Weatherproof In-Use Cover — 1-Gang</h3>
+    <p>1-gang weatherproof while-in-use outlet cover. Clears up to 4&quot; plugs. UL listed for wet locations. Meets NEC 406.9.</p>
+  </div>
+  <div class="product-card" data-name="Weatherproof In-Use Cover — 2-Gang" data-cat="Boxes &amp; Enclosures" data-desc="2-gang while-in-use weatherproof cover. Vertical mount. For duplex GFCI receptacles in outdoor, wet locations.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>Weatherproof In-Use Cover — 2-Gang</h3>
+    <p>2-gang while-in-use weatherproof cover. Vertical mount. For duplex GFCI receptacles in outdoor, wet locations.</p>
+  </div>
+  <div class="product-card" data-name="PVC Weatherproof Box — 1-Gang" data-cat="Boxes &amp; Enclosures" data-desc="1-gang PVC outdoor box with conduit hubs. Gray. Used with PVC or FMC for outdoor and wet location wiring.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>PVC Weatherproof Box — 1-Gang</h3>
+    <p>1-gang PVC outdoor box with conduit hubs. Gray. Used with PVC or FMC for outdoor and wet location wiring.</p>
+  </div>
+  <div class="product-card" data-name="Junction Box 4&quot;x4&quot;x4&quot; — Hinged" data-cat="Boxes &amp; Enclosures" data-desc="4&quot;x4&quot;x4&quot; steel NEMA 1 junction box with hinged cover. For indoor wire splices, control wiring, and terminal blocks.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>Junction Box 4&quot;x4&quot;x4&quot; — Hinged</h3>
+    <p>4&quot;x4&quot;x4&quot; steel NEMA 1 junction box with hinged cover. For indoor wire splices, control wiring, and terminal blocks.</p>
+  </div>
+  <div class="product-card" data-name="Junction Box 6&quot;x6&quot;x4&quot; — NEMA 1" data-cat="Boxes &amp; Enclosures" data-desc="6&quot;x6&quot;x4&quot; steel junction box, knock-outs on all sides. Surface mount. For large wire splice points and terminal blocks.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>Junction Box 6&quot;x6&quot;x4&quot; — NEMA 1</h3>
+    <p>6&quot;x6&quot;x4&quot; steel junction box, knock-outs on all sides. Surface mount. For large wire splice points and terminal blocks.</p>
+  </div>
+  <div class="product-card" data-name="Junction Box 8&quot;x8&quot;x4&quot; — NEMA 1" data-cat="Boxes &amp; Enclosures" data-desc="8&quot;x8&quot;x4&quot; steel NEMA 1 enclosure. For complex wire junction and control wiring in dry indoor locations.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>Junction Box 8&quot;x8&quot;x4&quot; — NEMA 1</h3>
+    <p>8&quot;x8&quot;x4&quot; steel NEMA 1 enclosure. For complex wire junction and control wiring in dry indoor locations.</p>
+  </div>
+  <div class="product-card" data-name="Junction Box 12&quot;x12&quot;x6&quot; — NEMA 1" data-cat="Boxes &amp; Enclosures" data-desc="12&quot;x12&quot;x6&quot; NEMA 1 enclosure with mounting plate. Ideal for control panels, relays, and terminal strip assemblies.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>Junction Box 12&quot;x12&quot;x6&quot; — NEMA 1</h3>
+    <p>12&quot;x12&quot;x6&quot; NEMA 1 enclosure with mounting plate. Ideal for control panels, relays, and terminal strip assemblies.</p>
+  </div>
+  <div class="product-card" data-name="NEMA 3R Enclosure 12&quot;x10&quot;x4&quot;" data-cat="Boxes &amp; Enclosures" data-desc="12&quot;x10&quot;x4&quot; NEMA 3R rainproof outdoor steel enclosure. For exterior distribution panels, disconnects, and controls.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>NEMA 3R Enclosure 12&quot;x10&quot;x4&quot;</h3>
+    <p>12&quot;x10&quot;x4&quot; NEMA 3R rainproof outdoor steel enclosure. For exterior distribution panels, disconnects, and controls.</p>
+  </div>
+  <div class="product-card" data-name="NEMA 4 Stainless Enclosure 12&quot;x10&quot;x5&quot;" data-cat="Boxes &amp; Enclosures" data-desc="NEMA 4 watertight stainless steel enclosure. Hosedown-rated. For washdown areas, food processing, and harsh environments.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>NEMA 4 Stainless Enclosure 12&quot;x10&quot;x5&quot;</h3>
+    <p>NEMA 4 watertight stainless steel enclosure. Hosedown-rated. For washdown areas, food processing, and harsh environments.</p>
+  </div>
+  <div class="product-card" data-name="NEMA 1 Surface Box 4&quot;x4&quot; — Starter Enclosure" data-cat="Boxes &amp; Enclosures" data-desc="Compact NEMA 1 steel box. For small control panels, motor starter mounting, and relay enclosures.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>NEMA 1 Surface Box 4&quot;x4&quot; — Starter Enclosure</h3>
+    <p>Compact NEMA 1 steel box. For small control panels, motor starter mounting, and relay enclosures.</p>
+  </div>
+  <div class="product-card" data-name="Handy Box (Utility Box) — 1-Gang Surface" data-cat="Boxes &amp; Enclosures" data-desc="1-gang surface mount handy box. Steel, 10.5 cu in. For exposed wiring on concrete, masonry, and wood surfaces.">
+    <span class="cat-badge">Boxes &amp; Enclosures</span>
+    <div class="product-icon">📦</div>
+    <h3>Handy Box (Utility Box) — 1-Gang Surface</h3>
+    <p>1-gang surface mount handy box. Steel, 10.5 cu in. For exposed wiring on concrete, masonry, and wood surfaces.</p>
+  </div>
+  <div class="product-card" data-name="Square D QO115 — 15A 1-Pole Breaker" data-cat="Breakers &amp; Panels" data-desc="Square D QO series 15A single-pole circuit breaker. Plug-on style. 120V, 10kAIC. Fits QO load centers.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Square D QO115 — 15A 1-Pole Breaker</h3>
+    <p>Square D QO series 15A single-pole circuit breaker. Plug-on style. 120V, 10kAIC. Fits QO load centers.</p>
+  </div>
+  <div class="product-card" data-name="Square D QO120 — 20A 1-Pole Breaker" data-cat="Breakers &amp; Panels" data-desc="Square D QO 20A 1-pole breaker. For 20A kitchen, bath, and general circuits. Visi-Trip indicator.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Square D QO120 — 20A 1-Pole Breaker</h3>
+    <p>Square D QO 20A 1-pole breaker. For 20A kitchen, bath, and general circuits. Visi-Trip indicator.</p>
+  </div>
+  <div class="product-card" data-name="Square D QO230 — 30A 2-Pole Breaker" data-cat="Breakers &amp; Panels" data-desc="Square D QO 30A 2-pole, 240V breaker. For dryers, water heaters, and A/C disconnects. 10kAIC.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Square D QO230 — 30A 2-Pole Breaker</h3>
+    <p>Square D QO 30A 2-pole, 240V breaker. For dryers, water heaters, and A/C disconnects. 10kAIC.</p>
+  </div>
+  <div class="product-card" data-name="Square D QO250 — 50A 2-Pole Breaker" data-cat="Breakers &amp; Panels" data-desc="Square D QO 50A 2-pole breaker. For electric ranges, EV chargers, and 240V appliances.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Square D QO250 — 50A 2-Pole Breaker</h3>
+    <p>Square D QO 50A 2-pole breaker. For electric ranges, EV chargers, and 240V appliances.</p>
+  </div>
+  <div class="product-card" data-name="Square D QO2100 — 100A 2-Pole Breaker" data-cat="Breakers &amp; Panels" data-desc="Square D QO 100A 2-pole main or feeder breaker. For sub-panels and large 240V loads. 22kAIC.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Square D QO2100 — 100A 2-Pole Breaker</h3>
+    <p>Square D QO 100A 2-pole main or feeder breaker. For sub-panels and large 240V loads. 22kAIC.</p>
+  </div>
+  <div class="product-card" data-name="Square D QO2200 — 200A 2-Pole Main Breaker" data-cat="Breakers &amp; Panels" data-desc="Square D QO 200A 2-pole main circuit breaker. For service entrances and main panel disconnects. 22kAIC.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Square D QO2200 — 200A 2-Pole Main Breaker</h3>
+    <p>Square D QO 200A 2-pole main circuit breaker. For service entrances and main panel disconnects. 22kAIC.</p>
+  </div>
+  <div class="product-card" data-name="Square D QO115AFIC — 15A AFCI Breaker" data-cat="Breakers &amp; Panels" data-desc="Square D QO 15A AFCI combination arc fault breaker. NEC 2020 compliant. Required for bedroom and living area circuits.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Square D QO115AFIC — 15A AFCI Breaker</h3>
+    <p>Square D QO 15A AFCI combination arc fault breaker. NEC 2020 compliant. Required for bedroom and living area circuits.</p>
+  </div>
+  <div class="product-card" data-name="Square D QO120AFIC — 20A AFCI Breaker" data-cat="Breakers &amp; Panels" data-desc="Square D QO 20A AFCI breaker. Arc fault protection for kitchen, laundry, and all NEC-required circuits.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Square D QO120AFIC — 20A AFCI Breaker</h3>
+    <p>Square D QO 20A AFCI breaker. Arc fault protection for kitchen, laundry, and all NEC-required circuits.</p>
+  </div>
+  <div class="product-card" data-name="Square D QO115GFIC — 15A GFCI Breaker" data-cat="Breakers &amp; Panels" data-desc="Square D QO 15A GFCI breaker with pigtail. Ground fault protection for wet area circuits at the panel.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Square D QO115GFIC — 15A GFCI Breaker</h3>
+    <p>Square D QO 15A GFCI breaker with pigtail. Ground fault protection for wet area circuits at the panel.</p>
+  </div>
+  <div class="product-card" data-name="Square D QO120GFIC — 20A GFCI Breaker" data-cat="Breakers &amp; Panels" data-desc="Square D QO 20A GFCI breaker. For bathroom, kitchen, outdoor, and garage circuits requiring GFCI protection.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Square D QO120GFIC — 20A GFCI Breaker</h3>
+    <p>Square D QO 20A GFCI breaker. For bathroom, kitchen, outdoor, and garage circuits requiring GFCI protection.</p>
+  </div>
+  <div class="product-card" data-name="Eaton BR115 — 15A 1-Pole Breaker" data-cat="Breakers &amp; Panels" data-desc="Eaton BR series 15A 1-pole plug-on breaker. 120/240V, 10kAIC. Fits Eaton BR load centers.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Eaton BR115 — 15A 1-Pole Breaker</h3>
+    <p>Eaton BR series 15A 1-pole plug-on breaker. 120/240V, 10kAIC. Fits Eaton BR load centers.</p>
+  </div>
+  <div class="product-card" data-name="Eaton BR120 — 20A 1-Pole Breaker" data-cat="Breakers &amp; Panels" data-desc="Eaton BR 20A single-pole breaker. 120V, plug-on. Standard for 20A general purpose branch circuits.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Eaton BR120 — 20A 1-Pole Breaker</h3>
+    <p>Eaton BR 20A single-pole breaker. 120V, plug-on. Standard for 20A general purpose branch circuits.</p>
+  </div>
+  <div class="product-card" data-name="Eaton BR230 — 30A 2-Pole Breaker" data-cat="Breakers &amp; Panels" data-desc="Eaton BR 30A 2-pole 240V breaker. For dryers, water heaters, and HVAC equipment.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Eaton BR230 — 30A 2-Pole Breaker</h3>
+    <p>Eaton BR 30A 2-pole 240V breaker. For dryers, water heaters, and HVAC equipment.</p>
+  </div>
+  <div class="product-card" data-name="Eaton BR250 — 50A 2-Pole Breaker" data-cat="Breakers &amp; Panels" data-desc="Eaton BR 50A 2-pole breaker. For ranges, EV chargers, and large 240V circuits.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Eaton BR250 — 50A 2-Pole Breaker</h3>
+    <p>Eaton BR 50A 2-pole breaker. For ranges, EV chargers, and large 240V circuits.</p>
+  </div>
+  <div class="product-card" data-name="Eaton BR2100 — 100A 2-Pole Breaker" data-cat="Breakers &amp; Panels" data-desc="Eaton BR 100A 2-pole breaker. For sub-panel feeds and large equipment circuits. 22kAIC rating.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Eaton BR2100 — 100A 2-Pole Breaker</h3>
+    <p>Eaton BR 100A 2-pole breaker. For sub-panel feeds and large equipment circuits. 22kAIC rating.</p>
+  </div>
+  <div class="product-card" data-name="Siemens Q115 — 15A 1-Pole Breaker" data-cat="Breakers &amp; Panels" data-desc="Siemens Q-series 15A 1-pole breaker. 120V, 10kAIC. Plug-in style for Siemens/Murray load centers.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Siemens Q115 — 15A 1-Pole Breaker</h3>
+    <p>Siemens Q-series 15A 1-pole breaker. 120V, 10kAIC. Plug-in style for Siemens/Murray load centers.</p>
+  </div>
+  <div class="product-card" data-name="Siemens Q120 — 20A 1-Pole Breaker" data-cat="Breakers &amp; Panels" data-desc="Siemens Q-series 20A 1-pole breaker. Standard 20A branch circuit protection for Siemens panels.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Siemens Q120 — 20A 1-Pole Breaker</h3>
+    <p>Siemens Q-series 20A 1-pole breaker. Standard 20A branch circuit protection for Siemens panels.</p>
+  </div>
+  <div class="product-card" data-name="Siemens Q230 — 30A 2-Pole Breaker" data-cat="Breakers &amp; Panels" data-desc="Siemens 30A 2-pole 240V breaker. Plug-in type for Siemens/ITE load centers. 10kAIC.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Siemens Q230 — 30A 2-Pole Breaker</h3>
+    <p>Siemens 30A 2-pole 240V breaker. Plug-in type for Siemens/ITE load centers. 10kAIC.</p>
+  </div>
+  <div class="product-card" data-name="Square D QO130L — 30-Space 200A Load Center" data-cat="Breakers &amp; Panels" data-desc="Square D QO 200A 30-space 60-circuit indoor load center. Main breaker included. For residential and light commercial service.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Square D QO130L — 30-Space 200A Load Center</h3>
+    <p>Square D QO 200A 30-space 60-circuit indoor load center. Main breaker included. For residential and light commercial service.</p>
+  </div>
+  <div class="product-card" data-name="Square D QO140L — 40-Space 200A Load Center" data-cat="Breakers &amp; Panels" data-desc="Square D QO 40-space 80-circuit 200A indoor load center with main breaker. Copper bus. Flush or surface mount.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Square D QO140L — 40-Space 200A Load Center</h3>
+    <p>Square D QO 40-space 80-circuit 200A indoor load center with main breaker. Copper bus. Flush or surface mount.</p>
+  </div>
+  <div class="product-card" data-name="Homeline 100A 20-Space Load Center" data-cat="Breakers &amp; Panels" data-desc="Square D Homeline 100A main breaker panel, 20-space 40-circuit. Value line for residential new construction.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Homeline 100A 20-Space Load Center</h3>
+    <p>Square D Homeline 100A main breaker panel, 20-space 40-circuit. Value line for residential new construction.</p>
+  </div>
+  <div class="product-card" data-name="Square D Homeline 200A 40-Space Panel" data-cat="Breakers &amp; Panels" data-desc="200A 40-space 80-circuit Homeline main breaker load center. Pre-wired main breaker, copper-clad aluminum bus.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Square D Homeline 200A 40-Space Panel</h3>
+    <p>200A 40-space 80-circuit Homeline main breaker load center. Pre-wired main breaker, copper-clad aluminum bus.</p>
+  </div>
+  <div class="product-card" data-name="Square D 60A Safety Disconnect (NEMA 3R)" data-cat="Breakers &amp; Panels" data-desc="60A 240V 2-pole non-fusible safety switch. NEMA 3R outdoor rated. For A/C unit and equipment disconnects.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Square D 60A Safety Disconnect (NEMA 3R)</h3>
+    <p>60A 240V 2-pole non-fusible safety switch. NEMA 3R outdoor rated. For A/C unit and equipment disconnects.</p>
+  </div>
+  <div class="product-card" data-name="Square D 100A Safety Disconnect (NEMA 3R)" data-cat="Breakers &amp; Panels" data-desc="100A 240V 2-pole NEMA 3R non-fusible disconnect. For sub-panel and large equipment disconnecting means.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Square D 100A Safety Disconnect (NEMA 3R)</h3>
+    <p>100A 240V 2-pole NEMA 3R non-fusible disconnect. For sub-panel and large equipment disconnecting means.</p>
+  </div>
+  <div class="product-card" data-name="Eaton 200A Main Breaker Panel — 40-Space" data-cat="Breakers &amp; Panels" data-desc="Eaton BR 200A 40-space 80-circuit main breaker load center. For residential service upgrades and new construction.">
+    <span class="cat-badge">Breakers &amp; Panels</span>
+    <div class="product-icon">⚡</div>
+    <h3>Eaton 200A Main Breaker Panel — 40-Space</h3>
+    <p>Eaton BR 200A 40-space 80-circuit main breaker load center. For residential service upgrades and new construction.</p>
+  </div>
+  <div class="product-card" data-name="Leviton 15A Duplex Receptacle — White" data-cat="Devices &amp; Receptacles" data-desc="Leviton 5320 15A 125V duplex outlet. White. Commercial grade, back and side wired. For standard branch circuits.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>Leviton 15A Duplex Receptacle — White</h3>
+    <p>Leviton 5320 15A 125V duplex outlet. White. Commercial grade, back and side wired. For standard branch circuits.</p>
+  </div>
+  <div class="product-card" data-name="Leviton 15A Duplex Receptacle — Ivory" data-cat="Devices &amp; Receptacles" data-desc="Leviton 5320-I 15A duplex receptacle in ivory finish. Side-wired, break-off tab for split circuit use.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>Leviton 15A Duplex Receptacle — Ivory</h3>
+    <p>Leviton 5320-I 15A duplex receptacle in ivory finish. Side-wired, break-off tab for split circuit use.</p>
+  </div>
+  <div class="product-card" data-name="Leviton 15A Duplex Receptacle — Almond" data-cat="Devices &amp; Receptacles" data-desc="Leviton 5320-A 15A 125V duplex outlet, almond. Residential and commercial standard branch circuits.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>Leviton 15A Duplex Receptacle — Almond</h3>
+    <p>Leviton 5320-A 15A 125V duplex outlet, almond. Residential and commercial standard branch circuits.</p>
+  </div>
+  <div class="product-card" data-name="20A Tamper-Resistant Duplex Receptacle" data-cat="Devices &amp; Receptacles" data-desc="20A 125V TR duplex outlet. Tamper-resistant shutters per NEC 406.12. Required in all residential rooms. White.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>20A Tamper-Resistant Duplex Receptacle</h3>
+    <p>20A 125V TR duplex outlet. Tamper-resistant shutters per NEC 406.12. Required in all residential rooms. White.</p>
+  </div>
+  <div class="product-card" data-name="Leviton GFCI 15A Self-Test — White" data-cat="Devices &amp; Receptacles" data-desc="Leviton GFNT1 15A 125V GFCI duplex outlet with self-test and automatic monitoring. Auto-lockout if device fails test.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>Leviton GFCI 15A Self-Test — White</h3>
+    <p>Leviton GFNT1 15A 125V GFCI duplex outlet with self-test and automatic monitoring. Auto-lockout if device fails test.</p>
+  </div>
+  <div class="product-card" data-name="Leviton GFCI 20A — White" data-cat="Devices &amp; Receptacles" data-desc="Leviton GFNT2 20A 125V GFCI outlet. For kitchen, bath, garage, outdoor circuits. Self-test technology.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>Leviton GFCI 20A — White</h3>
+    <p>Leviton GFNT2 20A 125V GFCI outlet. For kitchen, bath, garage, outdoor circuits. Self-test technology.</p>
+  </div>
+  <div class="product-card" data-name="USB-A+C Combo Duplex Receptacle" data-cat="Devices &amp; Receptacles" data-desc="15A duplex receptacle with integrated USB-A (2.4A) and USB-C (3A PD) charging ports. White. No adapter needed.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>USB-A+C Combo Duplex Receptacle</h3>
+    <p>15A duplex receptacle with integrated USB-A (2.4A) and USB-C (3A PD) charging ports. White. No adapter needed.</p>
+  </div>
+  <div class="product-card" data-name="30A Dryer Receptacle — 3-Wire (NEMA 10-30R)" data-cat="Devices &amp; Receptacles" data-desc="30A 125/250V dryer outlet, 3-wire, flush mount. NEMA 10-30R. For older dryer installations without ground.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>30A Dryer Receptacle — 3-Wire (NEMA 10-30R)</h3>
+    <p>30A 125/250V dryer outlet, 3-wire, flush mount. NEMA 10-30R. For older dryer installations without ground.</p>
+  </div>
+  <div class="product-card" data-name="30A Dryer Receptacle — 4-Wire (NEMA 14-30R)" data-cat="Devices &amp; Receptacles" data-desc="30A 125/250V 4-wire dryer outlet. NEMA 14-30R with ground. Required per current NEC for new dryer circuits.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>30A Dryer Receptacle — 4-Wire (NEMA 14-30R)</h3>
+    <p>30A 125/250V 4-wire dryer outlet. NEMA 14-30R with ground. Required per current NEC for new dryer circuits.</p>
+  </div>
+  <div class="product-card" data-name="50A Range Receptacle — 4-Wire (NEMA 14-50R)" data-cat="Devices &amp; Receptacles" data-desc="50A 125/250V range outlet, 4-wire flush mount. NEMA 14-50R. For electric ranges and EV charger installations.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>50A Range Receptacle — 4-Wire (NEMA 14-50R)</h3>
+    <p>50A 125/250V range outlet, 4-wire flush mount. NEMA 14-50R. For electric ranges and EV charger installations.</p>
+  </div>
+  <div class="product-card" data-name="Single-Pole 15A Switch — White" data-cat="Devices &amp; Receptacles" data-desc="Leviton 1451 15A 120/277V single-pole switch. White. Side-wired. For standard lighting control in residential/commercial.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>Single-Pole 15A Switch — White</h3>
+    <p>Leviton 1451 15A 120/277V single-pole switch. White. Side-wired. For standard lighting control in residential/commercial.</p>
+  </div>
+  <div class="product-card" data-name="3-Way 15A Switch — White" data-cat="Devices &amp; Receptacles" data-desc="15A 120/277V 3-way switch. For controlling lights from two locations. White, side and back wired.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>3-Way 15A Switch — White</h3>
+    <p>15A 120/277V 3-way switch. For controlling lights from two locations. White, side and back wired.</p>
+  </div>
+  <div class="product-card" data-name="4-Way 15A Switch — White" data-cat="Devices &amp; Receptacles" data-desc="15A 4-way switch. Used with two 3-way switches to control lighting from three or more locations.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>4-Way 15A Switch — White</h3>
+    <p>15A 4-way switch. Used with two 3-way switches to control lighting from three or more locations.</p>
+  </div>
+  <div class="product-card" data-name="Decora Single-Pole Switch — White" data-cat="Devices &amp; Receptacles" data-desc="Leviton Decora 15A single-pole rocker switch. White. Requires Decora-style wallplate. For standard lighting circuits.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>Decora Single-Pole Switch — White</h3>
+    <p>Leviton Decora 15A single-pole rocker switch. White. Requires Decora-style wallplate. For standard lighting circuits.</p>
+  </div>
+  <div class="product-card" data-name="Decora 3-Way Switch — White" data-cat="Devices &amp; Receptacles" data-desc="Leviton Decora 15A 3-way rocker switch. Matches all Decora wiring devices. Requires Decora wallplate.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>Decora 3-Way Switch — White</h3>
+    <p>Leviton Decora 15A 3-way rocker switch. Matches all Decora wiring devices. Requires Decora wallplate.</p>
+  </div>
+  <div class="product-card" data-name="LED Dimmer Switch 600W — White" data-cat="Devices &amp; Receptacles" data-desc="Leviton Decora 600W LED/CFL/incandescent dimmer switch. Single-pole. CL technology for smooth dimming without flicker.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>LED Dimmer Switch 600W — White</h3>
+    <p>Leviton Decora 600W LED/CFL/incandescent dimmer switch. Single-pole. CL technology for smooth dimming without flicker.</p>
+  </div>
+  <div class="product-card" data-name="Occupancy Sensor Switch — PIR" data-cat="Devices &amp; Receptacles" data-desc="Passive infrared (PIR) occupancy/vacancy sensor switch. Auto-on/off for energy savings. Adjustable time-out, 180° detection.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>Occupancy Sensor Switch — PIR</h3>
+    <p>Passive infrared (PIR) occupancy/vacancy sensor switch. Auto-on/off for energy savings. Adjustable time-out, 180° detection.</p>
+  </div>
+  <div class="product-card" data-name="20A Spec-Grade Duplex Outlet — White" data-cat="Devices &amp; Receptacles" data-desc="20A 125V specification-grade commercial outlet. Larger terminals, heavy-duty nylon body. For commercial branch circuits.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>20A Spec-Grade Duplex Outlet — White</h3>
+    <p>20A 125V specification-grade commercial outlet. Larger terminals, heavy-duty nylon body. For commercial branch circuits.</p>
+  </div>
+  <div class="product-card" data-name="20A Commercial Switch — White" data-cat="Devices &amp; Receptacles" data-desc="20A 120/277V commercial-grade single-pole switch. Heavy-duty construction for high-traffic commercial environments.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>20A Commercial Switch — White</h3>
+    <p>20A 120/277V commercial-grade single-pole switch. Heavy-duty construction for high-traffic commercial environments.</p>
+  </div>
+  <div class="product-card" data-name="GFCI 20A TR Outlet — Ivory" data-cat="Devices &amp; Receptacles" data-desc="20A tamper-resistant GFCI receptacle, ivory. For laundry, garage, and outdoor wet-location circuits.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>GFCI 20A TR Outlet — Ivory</h3>
+    <p>20A tamper-resistant GFCI receptacle, ivory. For laundry, garage, and outdoor wet-location circuits.</p>
+  </div>
+  <div class="product-card" data-name="Decorator 1-Gang Wallplate — White" data-cat="Devices &amp; Receptacles" data-desc="1-gang Decora rocker wallplate, white. Screwless snap-in design or traditional screw mount. Matches Decora devices.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>Decorator 1-Gang Wallplate — White</h3>
+    <p>1-gang Decora rocker wallplate, white. Screwless snap-in design or traditional screw mount. Matches Decora devices.</p>
+  </div>
+  <div class="product-card" data-name="2-Gang Duplex Wallplate — White" data-cat="Devices &amp; Receptacles" data-desc="2-gang standard duplex wallplate, white. For two standard receptacles or switches side by side.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>2-Gang Duplex Wallplate — White</h3>
+    <p>2-gang standard duplex wallplate, white. For two standard receptacles or switches side by side.</p>
+  </div>
+  <div class="product-card" data-name="RV/Generator 30A Outlet (NEMA TT-30R)" data-cat="Devices &amp; Receptacles" data-desc="30A 125V RV outlet, NEMA TT-30R. For RV pedestal and generator connection points.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>RV/Generator 30A Outlet (NEMA TT-30R)</h3>
+    <p>30A 125V RV outlet, NEMA TT-30R. For RV pedestal and generator connection points.</p>
+  </div>
+  <div class="product-card" data-name="240V 20A Outlet NEMA 6-20R — Flush Mount" data-cat="Devices &amp; Receptacles" data-desc="20A 250V 2-pole receptacle, NEMA 6-20R. For 240V power tools, compressors, and equipment without neutral.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>240V 20A Outlet NEMA 6-20R — Flush Mount</h3>
+    <p>20A 250V 2-pole receptacle, NEMA 6-20R. For 240V power tools, compressors, and equipment without neutral.</p>
+  </div>
+  <div class="product-card" data-name="L5-30R Twist-Lock 30A 125V Receptacle" data-cat="Devices &amp; Receptacles" data-desc="NEMA L5-30R locking receptacle, 30A 125V. For generator and temporary power connections requiring secure locking.">
+    <span class="cat-badge">Devices &amp; Receptacles</span>
+    <div class="product-icon">🔲</div>
+    <h3>L5-30R Twist-Lock 30A 125V Receptacle</h3>
+    <p>NEMA L5-30R locking receptacle, 30A 125V. For generator and temporary power connections requiring secure locking.</p>
+  </div>
+  <div class="product-card" data-name="6&quot; LED Recessed Light with Junction Box" data-cat="Lighting &amp; Controls" data-desc="6&quot; LED integrated recessed light, 75W equivalent, 800 lumens. IC-rated, airtight. Includes junction box for retrofit or new construction.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>6&quot; LED Recessed Light with Junction Box</h3>
+    <p>6&quot; LED integrated recessed light, 75W equivalent, 800 lumens. IC-rated, airtight. Includes junction box for retrofit or new construction.</p>
+  </div>
+  <div class="product-card" data-name="4&quot; LED Recessed Downlight" data-cat="Lighting &amp; Controls" data-desc="4&quot; slim LED recessed light, 600 lumens, 3000K/4000K selectable. For low-clearance ceilings and retrofit applications.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>4&quot; LED Recessed Downlight</h3>
+    <p>4&quot; slim LED recessed light, 600 lumens, 3000K/4000K selectable. For low-clearance ceilings and retrofit applications.</p>
+  </div>
+  <div class="product-card" data-name="LED Shop Light 4ft — 40W" data-cat="Lighting &amp; Controls" data-desc="4ft LED shop/garage light, 40W, 4400 lumens, 5000K daylight. Plug-in or hardwire. Linkable up to 4 fixtures.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>LED Shop Light 4ft — 40W</h3>
+    <p>4ft LED shop/garage light, 40W, 4400 lumens, 5000K daylight. Plug-in or hardwire. Linkable up to 4 fixtures.</p>
+  </div>
+  <div class="product-card" data-name="LED Shop Light 8ft — 75W" data-cat="Lighting &amp; Controls" data-desc="8ft LED shop light, 75W, 8250 lumens, 5000K. Surface mount. For workshops, warehouses, and parking garages.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>LED Shop Light 8ft — 75W</h3>
+    <p>8ft LED shop light, 75W, 8250 lumens, 5000K. Surface mount. For workshops, warehouses, and parking garages.</p>
+  </div>
+  <div class="product-card" data-name="LED Vapor Tight Fixture 4ft — 40W" data-cat="Lighting &amp; Controls" data-desc="4ft vapor-tight LED, 40W, 4800 lumens. IP65 rated for wet locations, car washes, and covered parking structures.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>LED Vapor Tight Fixture 4ft — 40W</h3>
+    <p>4ft vapor-tight LED, 40W, 4800 lumens. IP65 rated for wet locations, car washes, and covered parking structures.</p>
+  </div>
+  <div class="product-card" data-name="LED High Bay Light — 100W" data-cat="Lighting &amp; Controls" data-desc="100W UFO LED high bay, 13,000 lumens, 5000K, 120-277V. For 15-25ft ceilings in warehouses and factories.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>LED High Bay Light — 100W</h3>
+    <p>100W UFO LED high bay, 13,000 lumens, 5000K, 120-277V. For 15-25ft ceilings in warehouses and factories.</p>
+  </div>
+  <div class="product-card" data-name="LED High Bay Light — 150W" data-cat="Lighting &amp; Controls" data-desc="150W round LED high bay, 19,500 lumens. For 25-35ft mounting heights in distribution centers and industrial facilities.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>LED High Bay Light — 150W</h3>
+    <p>150W round LED high bay, 19,500 lumens. For 25-35ft mounting heights in distribution centers and industrial facilities.</p>
+  </div>
+  <div class="product-card" data-name="LED High Bay Light — 200W" data-cat="Lighting &amp; Controls" data-desc="200W UFO LED high bay, 26,000 lumens, 5000K. For 35-45ft ceilings in stadiums, large warehouses, and big box retail.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>LED High Bay Light — 200W</h3>
+    <p>200W UFO LED high bay, 26,000 lumens, 5000K. For 35-45ft ceilings in stadiums, large warehouses, and big box retail.</p>
+  </div>
+  <div class="product-card" data-name="LED Strip Light Kit — 50ft" data-cat="Lighting &amp; Controls" data-desc="50ft flexible LED strip, 3528 SMD, 12V DC, 3000K warm white. Adhesive backing. For accent, undercabinet, and display lighting.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>LED Strip Light Kit — 50ft</h3>
+    <p>50ft flexible LED strip, 3528 SMD, 12V DC, 3000K warm white. Adhesive backing. For accent, undercabinet, and display lighting.</p>
+  </div>
+  <div class="product-card" data-name="Exit Sign — LED, Dual Voltage (AC/DC)" data-cat="Lighting &amp; Controls" data-desc="LED exit sign, red letters. 120/277V AC with battery backup for 90-min emergency operation. Universal ceiling/wall/end mount.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>Exit Sign — LED, Dual Voltage (AC/DC)</h3>
+    <p>LED exit sign, red letters. 120/277V AC with battery backup for 90-min emergency operation. Universal ceiling/wall/end mount.</p>
+  </div>
+  <div class="product-card" data-name="Emergency Light — Single Head LED" data-cat="Lighting &amp; Controls" data-desc="Single-head LED emergency light. 120/277V, 90-minute battery backup. Adjustable head, self-testing option available.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>Emergency Light — Single Head LED</h3>
+    <p>Single-head LED emergency light. 120/277V, 90-minute battery backup. Adjustable head, self-testing option available.</p>
+  </div>
+  <div class="product-card" data-name="Emergency Light — Dual Head LED" data-cat="Lighting &amp; Controls" data-desc="Dual-head LED emergency light, two adjustable lamps. 120/277V, 90-min NiCd battery backup. For commercial egress lighting.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>Emergency Light — Dual Head LED</h3>
+    <p>Dual-head LED emergency light, two adjustable lamps. 120/277V, 90-min NiCd battery backup. For commercial egress lighting.</p>
+  </div>
+  <div class="product-card" data-name="Motion Sensor Security Light — 180 deg PIR" data-cat="Lighting &amp; Controls" data-desc="Dual-head LED motion security light, 180 deg PIR, 3500 lumens. Adjustable detection range, sensitivity, and timer. Outdoor, wet-rated.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>Motion Sensor Security Light — 180 deg PIR</h3>
+    <p>Dual-head LED motion security light, 180 deg PIR, 3500 lumens. Adjustable detection range, sensitivity, and timer. Outdoor, wet-rated.</p>
+  </div>
+  <div class="product-card" data-name="LED Outdoor Wall Pack — 30W" data-cat="Lighting &amp; Controls" data-desc="30W LED wall pack, dusk-to-dawn photocell optional. 3,900 lumens, 5000K. NEMA 3R, IP65. For commercial exterior lighting.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>LED Outdoor Wall Pack — 30W</h3>
+    <p>30W LED wall pack, dusk-to-dawn photocell optional. 3,900 lumens, 5000K. NEMA 3R, IP65. For commercial exterior lighting.</p>
+  </div>
+  <div class="product-card" data-name="LED Outdoor Wall Pack — 50W" data-cat="Lighting &amp; Controls" data-desc="50W commercial LED wall pack. 6,500 lumens, 120-277V. Replaces 175W metal halide wall packs.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>LED Outdoor Wall Pack — 50W</h3>
+    <p>50W commercial LED wall pack. 6,500 lumens, 120-277V. Replaces 175W metal halide wall packs.</p>
+  </div>
+  <div class="product-card" data-name="Photocell Sensor — Twist-Lock (NEMA 7-pin)" data-cat="Lighting &amp; Controls" data-desc="NEMA 7-pin twist-lock photocontrol. Dusk-to-dawn operation for outdoor lighting. 120-277V, 1000W max.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>Photocell Sensor — Twist-Lock (NEMA 7-pin)</h3>
+    <p>NEMA 7-pin twist-lock photocontrol. Dusk-to-dawn operation for outdoor lighting. 120-277V, 1000W max.</p>
+  </div>
+  <div class="product-card" data-name="Outdoor Post Lantern — LED" data-cat="Lighting &amp; Controls" data-desc="LED outdoor post/pier mount lantern. 60W equivalent, 800 lumens, 3000K warm white. Weatherproof, matte black finish.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>Outdoor Post Lantern — LED</h3>
+    <p>LED outdoor post/pier mount lantern. 60W equivalent, 800 lumens, 3000K warm white. Weatherproof, matte black finish.</p>
+  </div>
+  <div class="product-card" data-name="LED T8 Tube Lamp — 4ft, 15W" data-cat="Lighting &amp; Controls" data-desc="15W LED T8 tube lamp, 4ft, 2100 lumens, 4000K. Type A+B (works with or without ballast). Direct fluorescent replacement.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>LED T8 Tube Lamp — 4ft, 15W</h3>
+    <p>15W LED T8 tube lamp, 4ft, 2100 lumens, 4000K. Type A+B (works with or without ballast). Direct fluorescent replacement.</p>
+  </div>
+  <div class="product-card" data-name="Fluorescent Troffer 2x4 LED Retrofit" data-cat="Lighting &amp; Controls" data-desc="2x4 LED troffer retrofit kit, 50W, 6000 lumens, 4000K. Replaces 4-lamp T8 fluorescent fixtures in suspended ceilings.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>Fluorescent Troffer 2x4 LED Retrofit</h3>
+    <p>2x4 LED troffer retrofit kit, 50W, 6000 lumens, 4000K. Replaces 4-lamp T8 fluorescent fixtures in suspended ceilings.</p>
+  </div>
+  <div class="product-card" data-name="LED Canopy Light — 60W" data-cat="Lighting &amp; Controls" data-desc="60W LED canopy/surface mount fixture. For gas station canopies, covered parking, and loading docks. IP65, 8400 lumens.">
+    <span class="cat-badge">Lighting &amp; Controls</span>
+    <div class="product-icon">💡</div>
+    <h3>LED Canopy Light — 60W</h3>
+    <p>60W LED canopy/surface mount fixture. For gas station canopies, covered parking, and loading docks. IP65, 8400 lumens.</p>
+  </div>
+  <div class="product-card" data-name="Klein Wire Stripper/Cutter — 10-18 AWG" data-cat="Tools &amp; Supplies" data-desc="Klein Tools 11045 wire stripper and cutter for 10-18 AWG solid and stranded wire. Loop holes, bolt cutter notch.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Klein Wire Stripper/Cutter — 10-18 AWG</h3>
+    <p>Klein Tools 11045 wire stripper and cutter for 10-18 AWG solid and stranded wire. Loop holes, bolt cutter notch.</p>
+  </div>
+  <div class="product-card" data-name="Klein Lineman&#x27;s Pliers — 9&quot;" data-cat="Tools &amp; Supplies" data-desc="Klein 2000-9NE 9&quot; lineman&#x27;s pliers with fish tape puller. High-leverage design, hardened cutting knives, induction-hardened.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Klein Lineman&#x27;s Pliers — 9&quot;</h3>
+    <p>Klein 2000-9NE 9&quot; lineman&#x27;s pliers with fish tape puller. High-leverage design, hardened cutting knives, induction-hardened.</p>
+  </div>
+  <div class="product-card" data-name="Klein Side Cutting Pliers — 8&quot;" data-cat="Tools &amp; Supplies" data-desc="Klein D2000-28 8&quot; diagonal cutting pliers. Shear-type cutting blades, for cutting wire, pulling staples, and cutting cable ties.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Klein Side Cutting Pliers — 8&quot;</h3>
+    <p>Klein D2000-28 8&quot; diagonal cutting pliers. Shear-type cutting blades, for cutting wire, pulling staples, and cutting cable ties.</p>
+  </div>
+  <div class="product-card" data-name="Ideal Fish Tape — 50ft Steel" data-cat="Tools &amp; Supplies" data-desc="Ideal 31-050 50ft steel fish tape, 1/8&quot; x 50ft. For pulling wire through conduit. Durable case with easy rewind.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Ideal Fish Tape — 50ft Steel</h3>
+    <p>Ideal 31-050 50ft steel fish tape, 1/8&quot; x 50ft. For pulling wire through conduit. Durable case with easy rewind.</p>
+  </div>
+  <div class="product-card" data-name="Ideal Fish Tape — 100ft Steel" data-cat="Tools &amp; Supplies" data-desc="Ideal 31-100 100ft steel fish tape. For longer conduit runs. Includes fiberglass handle for insulation.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Ideal Fish Tape — 100ft Steel</h3>
+    <p>Ideal 31-100 100ft steel fish tape. For longer conduit runs. Includes fiberglass handle for insulation.</p>
+  </div>
+  <div class="product-card" data-name="Klein Conduit Bender — 1/2&quot; EMT" data-cat="Tools &amp; Supplies" data-desc="Klein 51600 1/2&quot; EMT conduit bender. High-visibility alignment marks for back-to-back bends, offsets, and saddles.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Klein Conduit Bender — 1/2&quot; EMT</h3>
+    <p>Klein 51600 1/2&quot; EMT conduit bender. High-visibility alignment marks for back-to-back bends, offsets, and saddles.</p>
+  </div>
+  <div class="product-card" data-name="Klein Conduit Bender — 3/4&quot; EMT" data-cat="Tools &amp; Supplies" data-desc="Klein 51605 3/4&quot; conduit bender with 1&quot; rigid bending shoe. Heavy-duty cast body, easy-to-read degree scale.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Klein Conduit Bender — 3/4&quot; EMT</h3>
+    <p>Klein 51605 3/4&quot; conduit bender with 1&quot; rigid bending shoe. Heavy-duty cast body, easy-to-read degree scale.</p>
+  </div>
+  <div class="product-card" data-name="Klein Conduit Bender — 1&quot; EMT" data-cat="Tools &amp; Supplies" data-desc="Klein 51608 1&quot; EMT conduit bender. Offset arrow, gain marks, and 45/90 degree markers on formed body.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Klein Conduit Bender — 1&quot; EMT</h3>
+    <p>Klein 51608 1&quot; EMT conduit bender. Offset arrow, gain marks, and 45/90 degree markers on formed body.</p>
+  </div>
+  <div class="product-card" data-name="Non-Contact Voltage Tester" data-cat="Tools &amp; Supplies" data-desc="Non-contact AC voltage tester, 12-1000V. Audible beep and LED indicator. For quickly detecting live circuits safely.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Non-Contact Voltage Tester</h3>
+    <p>Non-contact AC voltage tester, 12-1000V. Audible beep and LED indicator. For quickly detecting live circuits safely.</p>
+  </div>
+  <div class="product-card" data-name="Fluke 117 Electrician&#x27;s Multimeter" data-cat="Tools &amp; Supplies" data-desc="Fluke 117 True-RMS multimeter with VoltAlert non-contact voltage detection. For electricians in commercial environments.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Fluke 117 Electrician&#x27;s Multimeter</h3>
+    <p>Fluke 117 True-RMS multimeter with VoltAlert non-contact voltage detection. For electricians in commercial environments.</p>
+  </div>
+  <div class="product-card" data-name="Ideal Twister Wire Connectors — Assorted (100pk)" data-cat="Tools &amp; Supplies" data-desc="Ideal 30-100 assorted Twister wire connectors, 100-pack with red, yellow, and tan sizes. UL listed, spring action.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Ideal Twister Wire Connectors — Assorted (100pk)</h3>
+    <p>Ideal 30-100 assorted Twister wire connectors, 100-pack with red, yellow, and tan sizes. UL listed, spring action.</p>
+  </div>
+  <div class="product-card" data-name="Wago 221-413 Lever Connector — 3-Way (50pk)" data-cat="Tools &amp; Supplies" data-desc="Wago 221-413 3-conductor lever-lock splice connectors, 50-pack. 12-28 AWG. Reusable tool-free wire connections.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Wago 221-413 Lever Connector — 3-Way (50pk)</h3>
+    <p>Wago 221-413 3-conductor lever-lock splice connectors, 50-pack. 12-28 AWG. Reusable tool-free wire connections.</p>
+  </div>
+  <div class="product-card" data-name="Wago 221-415 Lever Connector — 5-Way (25pk)" data-cat="Tools &amp; Supplies" data-desc="Wago 221-415 5-conductor lever connectors, 25-pack. For multi-wire junctions and light fixtures. 12-28 AWG.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Wago 221-415 Lever Connector — 5-Way (25pk)</h3>
+    <p>Wago 221-415 5-conductor lever connectors, 25-pack. For multi-wire junctions and light fixtures. 12-28 AWG.</p>
+  </div>
+  <div class="product-card" data-name="3M Scotch 33+ Electrical Tape — 3/4&quot; x 66ft" data-cat="Tools &amp; Supplies" data-desc="3M Scotch Super 33+ vinyl electrical tape. Rated to 600V, 176°F. Black, premium conformable for insulation and phasing.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>3M Scotch 33+ Electrical Tape — 3/4&quot; x 66ft</h3>
+    <p>3M Scotch Super 33+ vinyl electrical tape. Rated to 600V, 176°F. Black, premium conformable for insulation and phasing.</p>
+  </div>
+  <div class="product-card" data-name="3M Super 88 Electrical Tape — 3/4&quot; x 66ft" data-cat="Tools &amp; Supplies" data-desc="3M Super 88 premium vinyl tape. For extreme temperature applications, UV resistant, excellent conformability. 8.5 mil thickness.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>3M Super 88 Electrical Tape — 3/4&quot; x 66ft</h3>
+    <p>3M Super 88 premium vinyl tape. For extreme temperature applications, UV resistant, excellent conformability. 8.5 mil thickness.</p>
+  </div>
+  <div class="product-card" data-name="Cable Staples 1/2&quot; — 100pk" data-cat="Tools &amp; Supplies" data-desc="1/2&quot; insulated cable staples, 100-pack. For securing NM-B and low voltage cables to wood framing per NEC.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Cable Staples 1/2&quot; — 100pk</h3>
+    <p>1/2&quot; insulated cable staples, 100-pack. For securing NM-B and low voltage cables to wood framing per NEC.</p>
+  </div>
+  <div class="product-card" data-name="Cable Staples 3/4&quot; — 100pk" data-cat="Tools &amp; Supplies" data-desc="3/4&quot; insulated staples for securing 12/2, 12/3 Romex to joists and studs. Fits standard hammer-tacker staples.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Cable Staples 3/4&quot; — 100pk</h3>
+    <p>3/4&quot; insulated staples for securing 12/2, 12/3 Romex to joists and studs. Fits standard hammer-tacker staples.</p>
+  </div>
+  <div class="product-card" data-name="Cable Staples 1&quot; — 100pk" data-cat="Tools &amp; Supplies" data-desc="1&quot; cable staples for securing larger NM cables and MC cable to framing members. 100-pack.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Cable Staples 1&quot; — 100pk</h3>
+    <p>1&quot; cable staples for securing larger NM cables and MC cable to framing members. 100-pack.</p>
+  </div>
+  <div class="product-card" data-name="Plastic Cable Ties — Assorted Pack (500pk)" data-cat="Tools &amp; Supplies" data-desc="Assorted nylon cable ties, 500-pack. 4&quot;, 6&quot;, 8&quot; and 11&quot; sizes. For bundling wire, securing cable in panels and trays.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Plastic Cable Ties — Assorted Pack (500pk)</h3>
+    <p>Assorted nylon cable ties, 500-pack. 4&quot;, 6&quot;, 8&quot; and 11&quot; sizes. For bundling wire, securing cable in panels and trays.</p>
+  </div>
+  <div class="product-card" data-name="EMT One-Hole Strap 1&quot; (50pk)" data-cat="Tools &amp; Supplies" data-desc="1&quot; EMT one-hole strap, steel zinc-plated, 50-pack. For securing 1&quot; EMT conduit to walls, ceilings, and framing.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>EMT One-Hole Strap 1&quot; (50pk)</h3>
+    <p>1&quot; EMT one-hole strap, steel zinc-plated, 50-pack. For securing 1&quot; EMT conduit to walls, ceilings, and framing.</p>
+  </div>
+  <div class="product-card" data-name="Panduit Cable Ties — 100pk (11&quot;)" data-cat="Tools &amp; Supplies" data-desc="Panduit PLT4I-C0 11&quot; heavy-duty nylon cable ties, 100-pack. 50 lb tensile strength. For heavy cable bundle management.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Panduit Cable Ties — 100pk (11&quot;)</h3>
+    <p>Panduit PLT4I-C0 11&quot; heavy-duty nylon cable ties, 100-pack. 50 lb tensile strength. For heavy cable bundle management.</p>
+  </div>
+  <div class="product-card" data-name="Wire Loom Split Tubing — 1/4&quot; x 100ft" data-cat="Tools &amp; Supplies" data-desc="1/4&quot; split wire loom tubing, 100ft. For bundling and protecting wire harnesses, panel wiring, and exposed cables.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Wire Loom Split Tubing — 1/4&quot; x 100ft</h3>
+    <p>1/4&quot; split wire loom tubing, 100ft. For bundling and protecting wire harnesses, panel wiring, and exposed cables.</p>
+  </div>
+  <div class="product-card" data-name="Cable Pulling Lubricant — 1 Quart" data-cat="Tools &amp; Supplies" data-desc="Ideal Wire Pulling Lubricant, 1 quart. Reduces friction for pulling THHN and cable in conduit. Non-hardening formula.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Cable Pulling Lubricant — 1 Quart</h3>
+    <p>Ideal Wire Pulling Lubricant, 1 quart. Reduces friction for pulling THHN and cable in conduit. Non-hardening formula.</p>
+  </div>
+  <div class="product-card" data-name="Electrical Box Level — Magnetic" data-cat="Tools &amp; Supplies" data-desc="Torpedo level with strong magnets for attaching to metal boxes and conduit. 3 vials, 9&quot; length. For perfect box alignment.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Electrical Box Level — Magnetic</h3>
+    <p>Torpedo level with strong magnets for attaching to metal boxes and conduit. 3 vials, 9&quot; length. For perfect box alignment.</p>
+  </div>
+  <div class="product-card" data-name="Klein Tools 6-in-1 Screwdriver" data-cat="Tools &amp; Supplies" data-desc="Klein Tools 32311 6-in-1 multi-bit screwdriver. Includes Phillips #1/#2, slotted 3/16&quot;/1/4&quot;, square #1/#2. Cushion-grip handle.">
+    <span class="cat-badge">Tools &amp; Supplies</span>
+    <div class="product-icon">🛠️</div>
+    <h3>Klein Tools 6-in-1 Screwdriver</h3>
+    <p>Klein Tools 32311 6-in-1 multi-bit screwdriver. Includes Phillips #1/#2, slotted 3/16&quot;/1/4&quot;, square #1/#2. Cushion-grip handle.</p>
+  </div>
+  <div class="product-card" data-name="Salisbury Arc Flash Gloves — Class 0 (Pair)" data-cat="Safety &amp; PPE" data-desc="Salisbury Class 0 rubber insulating gloves, 500V AC rated. For low-voltage electrical work. Includes leather protectors.">
+    <span class="cat-badge">Safety &amp; PPE</span>
+    <div class="product-icon">🦺</div>
+    <h3>Salisbury Arc Flash Gloves — Class 0 (Pair)</h3>
+    <p>Salisbury Class 0 rubber insulating gloves, 500V AC rated. For low-voltage electrical work. Includes leather protectors.</p>
+  </div>
+  <div class="product-card" data-name="Salisbury Arc Flash Gloves — Class 2 (Pair)" data-cat="Safety &amp; PPE" data-desc="Salisbury Class 2 rubber insulating gloves, 17,000V AC rated. For medium-voltage distribution work. ASTM D120 compliant.">
+    <span class="cat-badge">Safety &amp; PPE</span>
+    <div class="product-icon">🦺</div>
+    <h3>Salisbury Arc Flash Gloves — Class 2 (Pair)</h3>
+    <p>Salisbury Class 2 rubber insulating gloves, 17,000V AC rated. For medium-voltage distribution work. ASTM D120 compliant.</p>
+  </div>
+  <div class="product-card" data-name="Rubber Insulating Blanket — Class 0" data-cat="Safety &amp; PPE" data-desc="Class 0 rubber insulating blanket, 500V rated. For covering energized equipment during work. 36&quot;x36&quot; standard size.">
+    <span class="cat-badge">Safety &amp; PPE</span>
+    <div class="product-icon">🦺</div>
+    <h3>Rubber Insulating Blanket — Class 0</h3>
+    <p>Class 0 rubber insulating blanket, 500V rated. For covering energized equipment during work. 36&quot;x36&quot; standard size.</p>
+  </div>
+  <div class="product-card" data-name="Fluke T6-1000 Electrical Tester" data-cat="Safety &amp; PPE" data-desc="Fluke T6-1000 clamp-style voltage and current tester. FieldSense technology measures voltage without test leads. CAT III 1000V.">
+    <span class="cat-badge">Safety &amp; PPE</span>
+    <div class="product-icon">🦺</div>
+    <h3>Fluke T6-1000 Electrical Tester</h3>
+    <p>Fluke T6-1000 clamp-style voltage and current tester. FieldSense technology measures voltage without test leads. CAT III 1000V.</p>
+  </div>
+  <div class="product-card" data-name="Klein Insulated Screwdriver Set — 10pc" data-cat="Safety &amp; PPE" data-desc="Klein 33527 10-piece 1000V insulated screwdriver set. Individually tested and certified per IEC 60900. Phillips and slotted.">
+    <span class="cat-badge">Safety &amp; PPE</span>
+    <div class="product-icon">🦺</div>
+    <h3>Klein Insulated Screwdriver Set — 10pc</h3>
+    <p>Klein 33527 10-piece 1000V insulated screwdriver set. Individually tested and certified per IEC 60900. Phillips and slotted.</p>
+  </div>
+  <div class="product-card" data-name="Safety Glasses — Clear Lens, ANSI Z87.1" data-cat="Safety &amp; PPE" data-desc="Clear anti-scratch safety glasses. ANSI Z87.1 rated. Lightweight wraparound frame, adjustable temples. For general electrical work.">
+    <span class="cat-badge">Safety &amp; PPE</span>
+    <div class="product-icon">🦺</div>
+    <h3>Safety Glasses — Clear Lens, ANSI Z87.1</h3>
+    <p>Clear anti-scratch safety glasses. ANSI Z87.1 rated. Lightweight wraparound frame, adjustable temples. For general electrical work.</p>
+  </div>
+  <div class="product-card" data-name="Hard Hat — Class E (White)" data-cat="Safety &amp; PPE" data-desc="Type I Class E electrician hard hat. Rated for 20,000V electrical hazards. 6-point suspension, ratchet adjustment.">
+    <span class="cat-badge">Safety &amp; PPE</span>
+    <div class="product-icon">🦺</div>
+    <h3>Hard Hat — Class E (White)</h3>
+    <p>Type I Class E electrician hard hat. Rated for 20,000V electrical hazards. 6-point suspension, ratchet adjustment.</p>
+  </div>
+  <div class="product-card" data-name="LOTO Lockout Padlock Set — 6-Pack" data-cat="Safety &amp; PPE" data-desc="6-pack safety lockout padlocks with unique keys. 1&quot; shackle, aluminum body. Color-coded for individual lockout procedures.">
+    <span class="cat-badge">Safety &amp; PPE</span>
+    <div class="product-icon">🦺</div>
+    <h3>LOTO Lockout Padlock Set — 6-Pack</h3>
+    <p>6-pack safety lockout padlocks with unique keys. 1&quot; shackle, aluminum body. Color-coded for individual lockout procedures.</p>
+  </div>
+  <div class="product-card" data-name="Hasp Lockout Device — Multi-Lock 6-Hole" data-cat="Safety &amp; PPE" data-desc="6-hole lockout hasp for energy control. Allows multiple workers to lock out a single energy source simultaneously.">
+    <span class="cat-badge">Safety &amp; PPE</span>
+    <div class="product-icon">🦺</div>
+    <h3>Hasp Lockout Device — Multi-Lock 6-Hole</h3>
+    <p>6-hole lockout hasp for energy control. Allows multiple workers to lock out a single energy source simultaneously.</p>
+  </div>
+  <div class="product-card" data-name="Portable Lockout Station — 10 Device" data-cat="Safety &amp; PPE" data-desc="Wall-mount lockout station with 10 common lockout devices. Includes hasps, tags, padlocks, and breaker lockouts.">
+    <span class="cat-badge">Safety &amp; PPE</span>
+    <div class="product-icon">🦺</div>
+    <h3>Portable Lockout Station — 10 Device</h3>
+    <p>Wall-mount lockout station with 10 common lockout devices. Includes hasps, tags, padlocks, and breaker lockouts.</p>
+  </div>
+  <div class="product-card" data-name="Electrical Insulating Tape — 1000V Rated" data-cat="Safety &amp; PPE" data-desc="High-voltage insulating tape, 1000V CAT III. For insulating and color-coding terminals, bus bars, and conductors.">
+    <span class="cat-badge">Safety &amp; PPE</span>
+    <div class="product-icon">🦺</div>
+    <h3>Electrical Insulating Tape — 1000V Rated</h3>
+    <p>High-voltage insulating tape, 1000V CAT III. For insulating and color-coding terminals, bus bars, and conductors.</p>
+  </div>
+  <div class="product-card" data-name="Square D Magnetic Starter — 1HP 120V" data-cat="Motors &amp; Controls" data-desc="Square D 8536 type magnetic motor starter, 1HP at 120V single-phase. NEMA Size 00. With integral overload relay.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>Square D Magnetic Starter — 1HP 120V</h3>
+    <p>Square D 8536 type magnetic motor starter, 1HP at 120V single-phase. NEMA Size 00. With integral overload relay.</p>
+  </div>
+  <div class="product-card" data-name="Square D Magnetic Starter — 5HP 460V" data-cat="Motors &amp; Controls" data-desc="Square D NEMA Size 1 magnetic starter, 5HP at 460V 3-phase. Class 10 overload relay, NEMA 1 enclosure.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>Square D Magnetic Starter — 5HP 460V</h3>
+    <p>Square D NEMA Size 1 magnetic starter, 5HP at 460V 3-phase. Class 10 overload relay, NEMA 1 enclosure.</p>
+  </div>
+  <div class="product-card" data-name="Square D Magnetic Starter — 10HP 460V" data-cat="Motors &amp; Controls" data-desc="NEMA Size 2 magnetic starter for 10HP at 460V 3-phase. With melting alloy thermal overload relay.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>Square D Magnetic Starter — 10HP 460V</h3>
+    <p>NEMA Size 2 magnetic starter for 10HP at 460V 3-phase. With melting alloy thermal overload relay.</p>
+  </div>
+  <div class="product-card" data-name="Siemens 3RT Contactor — 3-Pole 30A" data-cat="Motors &amp; Controls" data-desc="Siemens 3RT2026 3-pole IEC contactor, 30A AC3. 120V coil. For motor switching and HVAC compressor control.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>Siemens 3RT Contactor — 3-Pole 30A</h3>
+    <p>Siemens 3RT2026 3-pole IEC contactor, 30A AC3. 120V coil. For motor switching and HVAC compressor control.</p>
+  </div>
+  <div class="product-card" data-name="Control Transformer 50VA — 480V to 120V" data-cat="Motors &amp; Controls" data-desc="50VA control power transformer. Primary 480V, secondary 120V. For powering 120V control circuits from 480V panels.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>Control Transformer 50VA — 480V to 120V</h3>
+    <p>50VA control power transformer. Primary 480V, secondary 120V. For powering 120V control circuits from 480V panels.</p>
+  </div>
+  <div class="product-card" data-name="Control Transformer 75VA — 240/480V to 120V" data-cat="Motors &amp; Controls" data-desc="75VA CPT, dual primary 240/480V, 120V secondary. For motor control panels and HVAC control power.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>Control Transformer 75VA — 240/480V to 120V</h3>
+    <p>75VA CPT, dual primary 240/480V, 120V secondary. For motor control panels and HVAC control power.</p>
+  </div>
+  <div class="product-card" data-name="Control Transformer 150VA — 480V to 120V" data-cat="Motors &amp; Controls" data-desc="150VA control transformer. For control panels with multiple solenoids, contactors, and pilot devices.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>Control Transformer 150VA — 480V to 120V</h3>
+    <p>150VA control transformer. For control panels with multiple solenoids, contactors, and pilot devices.</p>
+  </div>
+  <div class="product-card" data-name="Control Transformer 500VA — 480V to 120V" data-cat="Motors &amp; Controls" data-desc="500VA CPT, 480V primary, 120V/24V secondary options. For large control panels and automation systems.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>Control Transformer 500VA — 480V to 120V</h3>
+    <p>500VA CPT, 480V primary, 120V/24V secondary options. For large control panels and automation systems.</p>
+  </div>
+  <div class="product-card" data-name="22mm Push Button — Red (NO+NC)" data-cat="Motors &amp; Controls" data-desc="22mm momentary push button, red, with 1NO+1NC contacts. Flush head. For motor stop, emergency stop, and control panels.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>22mm Push Button — Red (NO+NC)</h3>
+    <p>22mm momentary push button, red, with 1NO+1NC contacts. Flush head. For motor stop, emergency stop, and control panels.</p>
+  </div>
+  <div class="product-card" data-name="22mm Push Button — Green (NO)" data-cat="Motors &amp; Controls" data-desc="22mm momentary green push button, 1NO contact. Flush or extended head. For motor start and control panel start buttons.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>22mm Push Button — Green (NO)</h3>
+    <p>22mm momentary green push button, 1NO contact. Flush or extended head. For motor start and control panel start buttons.</p>
+  </div>
+  <div class="product-card" data-name="LED Pilot Light — 22mm, Red, 120V" data-cat="Motors &amp; Controls" data-desc="22mm LED pilot light, red lens, 120V AC. For indicating motor running, fault conditions, and panel status.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>LED Pilot Light — 22mm, Red, 120V</h3>
+    <p>22mm LED pilot light, red lens, 120V AC. For indicating motor running, fault conditions, and panel status.</p>
+  </div>
+  <div class="product-card" data-name="Overload Relay — NEMA Size 1 Class 10" data-cat="Motors &amp; Controls" data-desc="NEMA Size 1 thermal overload relay with Class 10 trip. Manual/auto reset. For motor protection in magnetic starters.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>Overload Relay — NEMA Size 1 Class 10</h3>
+    <p>NEMA Size 1 thermal overload relay with Class 10 trip. Manual/auto reset. For motor protection in magnetic starters.</p>
+  </div>
+  <div class="product-card" data-name="AutomationDirect GS1 VFD — 1HP 240V" data-cat="Motors &amp; Controls" data-desc="Automation Direct GS1 1HP variable frequency drive, 240V single-phase input, 3-phase output. For speed control of AC motors.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>AutomationDirect GS1 VFD — 1HP 240V</h3>
+    <p>Automation Direct GS1 1HP variable frequency drive, 240V single-phase input, 3-phase output. For speed control of AC motors.</p>
+  </div>
+  <div class="product-card" data-name="AutomationDirect GS2 VFD — 2HP 240V" data-cat="Motors &amp; Controls" data-desc="GS2-22P0 2HP VFD, 240V 3-phase. Built-in PID, RS-485 Modbus, keypad programming. For pumps, fans, and conveyors.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>AutomationDirect GS2 VFD — 2HP 240V</h3>
+    <p>GS2-22P0 2HP VFD, 240V 3-phase. Built-in PID, RS-485 Modbus, keypad programming. For pumps, fans, and conveyors.</p>
+  </div>
+  <div class="product-card" data-name="AutomationDirect GS4 VFD — 5HP 480V" data-cat="Motors &amp; Controls" data-desc="GS4 5HP 480V 3-phase VFD. Sensorless vector control, built-in braking transistor, EMC filter. For demanding applications.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>AutomationDirect GS4 VFD — 5HP 480V</h3>
+    <p>GS4 5HP 480V 3-phase VFD. Sensorless vector control, built-in braking transistor, EMC filter. For demanding applications.</p>
+  </div>
+  <div class="product-card" data-name="Timer Relay — 24VDC, 0.1s to 100hr" data-cat="Motors &amp; Controls" data-desc="DIN-rail timer relay, 24VDC coil. 16 timing functions, 0.1 second to 100-hour range. SPDT output, for delayed control.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>Timer Relay — 24VDC, 0.1s to 100hr</h3>
+    <p>DIN-rail timer relay, 24VDC coil. 16 timing functions, 0.1 second to 100-hour range. SPDT output, for delayed control.</p>
+  </div>
+  <div class="product-card" data-name="Octal Relay Socket — 8-Pin DIN Mount" data-cat="Motors &amp; Controls" data-desc="8-pin DIN rail relay socket (octal base). Accepts standard 8-pin plug-in relays. Screw terminal connections.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>Octal Relay Socket — 8-Pin DIN Mount</h3>
+    <p>8-pin DIN rail relay socket (octal base). Accepts standard 8-pin plug-in relays. Screw terminal connections.</p>
+  </div>
+  <div class="product-card" data-name="8-Pin Plug-In Relay — 24VDC DPDT" data-cat="Motors &amp; Controls" data-desc="24VDC DPDT plug-in relay, 10A contacts. Octal base. LED indicator. For industrial control panels and PLC output modules.">
+    <span class="cat-badge">Motors &amp; Controls</span>
+    <div class="product-icon">⚙️</div>
+    <h3>8-Pin Plug-In Relay — 24VDC DPDT</h3>
+    <p>24VDC DPDT plug-in relay, 10A contacts. Octal base. LED indicator. For industrial control panels and PLC output modules.</p>
+  </div>
+  <div class="product-card" data-name="Acme Transformer 1KVA — 120/240V to 24V" data-cat="Transformers" data-desc="Acme 1KVA general purpose transformer. Primary 120/240V, secondary 24V. For HVAC controls, door bells, and low voltage systems.">
+    <span class="cat-badge">Transformers</span>
+    <div class="product-icon">🔋</div>
+    <h3>Acme Transformer 1KVA — 120/240V to 24V</h3>
+    <p>Acme 1KVA general purpose transformer. Primary 120/240V, secondary 24V. For HVAC controls, door bells, and low voltage systems.</p>
+  </div>
+  <div class="product-card" data-name="Acme Transformer 1.5KVA — 240/480V to 120V" data-cat="Transformers" data-desc="1.5KVA step-down transformer, 240/480V primary, 120V secondary. For powering small loads from 480V distribution.">
+    <span class="cat-badge">Transformers</span>
+    <div class="product-icon">🔋</div>
+    <h3>Acme Transformer 1.5KVA — 240/480V to 120V</h3>
+    <p>1.5KVA step-down transformer, 240/480V primary, 120V secondary. For powering small loads from 480V distribution.</p>
+  </div>
+  <div class="product-card" data-name="Acme Transformer 3KVA — 480V to 120/240V" data-cat="Transformers" data-desc="3KVA single-phase transformer. 480V primary, 120/240V split secondary. For lighting panels and small power distribution.">
+    <span class="cat-badge">Transformers</span>
+    <div class="product-icon">🔋</div>
+    <h3>Acme Transformer 3KVA — 480V to 120/240V</h3>
+    <p>3KVA single-phase transformer. 480V primary, 120/240V split secondary. For lighting panels and small power distribution.</p>
+  </div>
+  <div class="product-card" data-name="Acme Transformer 5KVA — 480V to 120/240V" data-cat="Transformers" data-desc="5KVA general purpose transformer, 480V to 120/240V. For powering 120V lighting and receptacle circuits from 480V systems.">
+    <span class="cat-badge">Transformers</span>
+    <div class="product-icon">🔋</div>
+    <h3>Acme Transformer 5KVA — 480V to 120/240V</h3>
+    <p>5KVA general purpose transformer, 480V to 120/240V. For powering 120V lighting and receptacle circuits from 480V systems.</p>
+  </div>
+  <div class="product-card" data-name="Distribution Transformer 7.5KVA — 3-Phase" data-cat="Transformers" data-desc="7.5KVA 3-phase dry-type distribution transformer. 480V delta primary, 208Y/120V secondary. For small commercial panel feeds.">
+    <span class="cat-badge">Transformers</span>
+    <div class="product-icon">🔋</div>
+    <h3>Distribution Transformer 7.5KVA — 3-Phase</h3>
+    <p>7.5KVA 3-phase dry-type distribution transformer. 480V delta primary, 208Y/120V secondary. For small commercial panel feeds.</p>
+  </div>
+  <div class="product-card" data-name="Distribution Transformer 15KVA — 3-Phase" data-cat="Transformers" data-desc="15KVA 3-phase dry-type transformer, 480V delta to 208Y/120V. TP-1 energy efficient rating. For commercial distribution.">
+    <span class="cat-badge">Transformers</span>
+    <div class="product-icon">🔋</div>
+    <h3>Distribution Transformer 15KVA — 3-Phase</h3>
+    <p>15KVA 3-phase dry-type transformer, 480V delta to 208Y/120V. TP-1 energy efficient rating. For commercial distribution.</p>
+  </div>
+  <div class="product-card" data-name="Distribution Transformer 30KVA — 3-Phase" data-cat="Transformers" data-desc="30KVA 3-phase dry-type step-down transformer. 480V to 208Y/120V. For medium commercial and light industrial power distribution.">
+    <span class="cat-badge">Transformers</span>
+    <div class="product-icon">🔋</div>
+    <h3>Distribution Transformer 30KVA — 3-Phase</h3>
+    <p>30KVA 3-phase dry-type step-down transformer. 480V to 208Y/120V. For medium commercial and light industrial power distribution.</p>
+  </div>
+  <div class="product-card" data-name="Buck-Boost Transformer 0.5KVA" data-cat="Transformers" data-desc="0.5KVA buck-boost transformer. Adjusts line voltage +/- 5-20%. For correcting low voltage to motors and equipment.">
+    <span class="cat-badge">Transformers</span>
+    <div class="product-icon">🔋</div>
+    <h3>Buck-Boost Transformer 0.5KVA</h3>
+    <p>0.5KVA buck-boost transformer. Adjusts line voltage +/- 5-20%. For correcting low voltage to motors and equipment.</p>
+  </div>
+  <div class="product-card" data-name="Isolation Transformer 1KVA — Medical Grade" data-cat="Transformers" data-desc="1KVA medical-grade isolation transformer. Provides isolated power for patient care areas. Meets NFPA 99 requirements.">
+    <span class="cat-badge">Transformers</span>
+    <div class="product-icon">🔋</div>
+    <h3>Isolation Transformer 1KVA — Medical Grade</h3>
+    <p>1KVA medical-grade isolation transformer. Provides isolated power for patient care areas. Meets NFPA 99 requirements.</p>
+  </div>
+  <div class="product-card" data-name="Stepdown Transformer 45KVA — 480V to 208V" data-cat="Transformers" data-desc="45KVA 3-phase dry-type transformer. For large commercial distribution. 480V delta to 208Y/120V wye configuration.">
+    <span class="cat-badge">Transformers</span>
+    <div class="product-icon">🔋</div>
+    <h3>Stepdown Transformer 45KVA — 480V to 208V</h3>
+    <p>45KVA 3-phase dry-type transformer. For large commercial distribution. 480V delta to 208Y/120V wye configuration.</p>
+  </div>
+  <div class="product-card" data-name="Belden Cat6 Bulk Cable 1000ft — Blue" data-cat="Low Voltage &amp; Data" data-desc="Belden 10GX12 Cat6 CMR riser-rated bulk cable, 1000ft. 23 AWG solid copper, 550 MHz. Blue, for horizontal data runs.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Belden Cat6 Bulk Cable 1000ft — Blue</h3>
+    <p>Belden 10GX12 Cat6 CMR riser-rated bulk cable, 1000ft. 23 AWG solid copper, 550 MHz. Blue, for horizontal data runs.</p>
+  </div>
+  <div class="product-card" data-name="Cat6A Bulk Cable 1000ft — Gray" data-cat="Low Voltage &amp; Data" data-desc="Cat6A shielded/unshielded bulk cable, 1000ft. 10Gbps at 100m, 500 MHz. For high-density data center and enterprise networks.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Cat6A Bulk Cable 1000ft — Gray</h3>
+    <p>Cat6A shielded/unshielded bulk cable, 1000ft. 10Gbps at 100m, 500 MHz. For high-density data center and enterprise networks.</p>
+  </div>
+  <div class="product-card" data-name="Keystone Jack Cat6 — White (25pk)" data-cat="Low Voltage &amp; Data" data-desc="Cat6 keystone jack, white, 25-pack. 110 punch-down style. For 568A/B wiring. Snap-in for standard keystone faceplates.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Keystone Jack Cat6 — White (25pk)</h3>
+    <p>Cat6 keystone jack, white, 25-pack. 110 punch-down style. For 568A/B wiring. Snap-in for standard keystone faceplates.</p>
+  </div>
+  <div class="product-card" data-name="Keystone Jack Cat6 — Black (25pk)" data-cat="Low Voltage &amp; Data" data-desc="Cat6 keystone jack, black, 25-pack. 110-style punch-down termination. For wall plates, patch panels, and surface boxes.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Keystone Jack Cat6 — Black (25pk)</h3>
+    <p>Cat6 keystone jack, black, 25-pack. 110-style punch-down termination. For wall plates, patch panels, and surface boxes.</p>
+  </div>
+  <div class="product-card" data-name="24-Port Cat6 Patch Panel — 1U" data-cat="Low Voltage &amp; Data" data-desc="24-port Cat6 patch panel, 1U rack mount. 110-style punch-down. Numbered ports, cable management, angled or straight available.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>24-Port Cat6 Patch Panel — 1U</h3>
+    <p>24-port Cat6 patch panel, 1U rack mount. 110-style punch-down. Numbered ports, cable management, angled or straight available.</p>
+  </div>
+  <div class="product-card" data-name="1U Horizontal Cable Manager — 19&quot; Rack" data-cat="Low Voltage &amp; Data" data-desc="1U horizontal cable management panel with fingers. Dual-sided, for organizing patch cords in 19&quot; rack cabinets.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>1U Horizontal Cable Manager — 19&quot; Rack</h3>
+    <p>1U horizontal cable management panel with fingers. Dual-sided, for organizing patch cords in 19&quot; rack cabinets.</p>
+  </div>
+  <div class="product-card" data-name="Low Voltage Mounting Bracket — 1-Gang (10pk)" data-cat="Low Voltage &amp; Data" data-desc="Old-work low voltage mounting bracket, 1-gang, 10-pack. Clamp-style for drywall. For keystone jacks, HDMI, and AV plates.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Low Voltage Mounting Bracket — 1-Gang (10pk)</h3>
+    <p>Old-work low voltage mounting bracket, 1-gang, 10-pack. Clamp-style for drywall. For keystone jacks, HDMI, and AV plates.</p>
+  </div>
+  <div class="product-card" data-name="Low Voltage Mounting Bracket — 2-Gang (10pk)" data-cat="Low Voltage &amp; Data" data-desc="2-gang low voltage mounting bracket, 10-pack. Retrofit style for data, coax, and AV outlets in existing drywall.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Low Voltage Mounting Bracket — 2-Gang (10pk)</h3>
+    <p>2-gang low voltage mounting bracket, 10-pack. Retrofit style for data, coax, and AV outlets in existing drywall.</p>
+  </div>
+  <div class="product-card" data-name="Structured Media Center 14&quot; — Flush Mount" data-cat="Low Voltage &amp; Data" data-desc="14&quot; structured media center (SMC) with hinged door. Flush mount. Holds modules for data, coax, and telephone distribution.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Structured Media Center 14&quot; — Flush Mount</h3>
+    <p>14&quot; structured media center (SMC) with hinged door. Flush mount. Holds modules for data, coax, and telephone distribution.</p>
+  </div>
+  <div class="product-card" data-name="Surface Mount Box — 1-Port (10pk)" data-cat="Low Voltage &amp; Data" data-desc="1-port surface mount keystone box, white, 10-pack. For adding data or phone outlets without opening walls.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Surface Mount Box — 1-Port (10pk)</h3>
+    <p>1-port surface mount keystone box, white, 10-pack. For adding data or phone outlets without opening walls.</p>
+  </div>
+  <div class="product-card" data-name="Surface Mount Box — 2-Port (10pk)" data-cat="Low Voltage &amp; Data" data-desc="2-port surface mount keystone box, white, 10-pack. For dual data drops at workstations and conference rooms.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Surface Mount Box — 2-Port (10pk)</h3>
+    <p>2-port surface mount keystone box, white, 10-pack. For dual data drops at workstations and conference rooms.</p>
+  </div>
+  <div class="product-card" data-name="Cat6 Inline Coupler (10pk)" data-cat="Low Voltage &amp; Data" data-desc="Cat6 keystone coupler, 10-pack. Connects two Cat6 patch cables or extends cable runs. F/F keystone interface.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Cat6 Inline Coupler (10pk)</h3>
+    <p>Cat6 keystone coupler, 10-pack. Connects two Cat6 patch cables or extends cable runs. F/F keystone interface.</p>
+  </div>
+  <div class="product-card" data-name="Cat6 Patch Cable — 1ft Blue" data-cat="Low Voltage &amp; Data" data-desc="1ft Cat6 snagless patch cord, blue. 24 AWG stranded, RJ45 molded boots. For short rack connections.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Cat6 Patch Cable — 1ft Blue</h3>
+    <p>1ft Cat6 snagless patch cord, blue. 24 AWG stranded, RJ45 molded boots. For short rack connections.</p>
+  </div>
+  <div class="product-card" data-name="Cat6 Patch Cable — 3ft Blue" data-cat="Low Voltage &amp; Data" data-desc="3ft Cat6 patch cable, blue snagless. For connecting patch panel to switch ports in 19&quot; rack environments.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Cat6 Patch Cable — 3ft Blue</h3>
+    <p>3ft Cat6 patch cable, blue snagless. For connecting patch panel to switch ports in 19&quot; rack environments.</p>
+  </div>
+  <div class="product-card" data-name="Cat6 Patch Cable — 5ft Blue" data-cat="Low Voltage &amp; Data" data-desc="5ft Cat6 snagless patch cord, blue. Standard workstation drop connection cable.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Cat6 Patch Cable — 5ft Blue</h3>
+    <p>5ft Cat6 snagless patch cord, blue. Standard workstation drop connection cable.</p>
+  </div>
+  <div class="product-card" data-name="Cat6 Patch Cable — 7ft Blue" data-cat="Low Voltage &amp; Data" data-desc="7ft Cat6 patch cable. For longer workstation connections and flexible rack patching requirements.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Cat6 Patch Cable — 7ft Blue</h3>
+    <p>7ft Cat6 patch cable. For longer workstation connections and flexible rack patching requirements.</p>
+  </div>
+  <div class="product-card" data-name="Cat6 Patch Cable — 10ft Blue" data-cat="Low Voltage &amp; Data" data-desc="10ft Cat6 snagless patch cord, blue. For cross-connects, rack-to-rack patching, and long workstation connections.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Cat6 Patch Cable — 10ft Blue</h3>
+    <p>10ft Cat6 snagless patch cord, blue. For cross-connects, rack-to-rack patching, and long workstation connections.</p>
+  </div>
+  <div class="product-card" data-name="Cat6 Patch Cable — 25ft Blue" data-cat="Low Voltage &amp; Data" data-desc="25ft Cat6 patch cable, blue. For longer runs between equipment rooms and work areas.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Cat6 Patch Cable — 25ft Blue</h3>
+    <p>25ft Cat6 patch cable, blue. For longer runs between equipment rooms and work areas.</p>
+  </div>
+  <div class="product-card" data-name="Coax Cable RG6 — 500ft Spool" data-cat="Low Voltage &amp; Data" data-desc="RG6 coaxial cable, 500ft spool. For cable TV, satellite, and antenna distribution. 3 GHz bandwidth, quad-shield available.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>Coax Cable RG6 — 500ft Spool</h3>
+    <p>RG6 coaxial cable, 500ft spool. For cable TV, satellite, and antenna distribution. 3 GHz bandwidth, quad-shield available.</p>
+  </div>
+  <div class="product-card" data-name="F-Connector RG6 Compression (50pk)" data-cat="Low Voltage &amp; Data" data-desc="RG6 compression F-connectors, 50-pack. For professional coax terminations. Weatherproof, corrosion-resistant nickel plate.">
+    <span class="cat-badge">Low Voltage &amp; Data</span>
+    <div class="product-icon">📡</div>
+    <h3>F-Connector RG6 Compression (50pk)</h3>
+    <p>RG6 compression F-connectors, 50-pack. For professional coax terminations. Weatherproof, corrosion-resistant nickel plate.</p>
+  </div>
+</div>
+</div><footer>
+  <div class="footer-content">
+    <div class="footer-logo">⚡ BONBON ELECTRICAL SUPPLY</div>
+    <p>Your complete source for electrical supplies. Commercial, residential, and industrial.</p>
+    <div class="footer-links">
+      <span>📞 Contact Us</span>
+      <span>📧 info@bonbonsupply.com</span>
+    </div>
+    <p class="footer-note">© 2026 BonBon Electrical Supply. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
